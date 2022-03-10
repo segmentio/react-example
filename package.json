@@ -1,7 +1,7 @@
 {
   "name": "react-example",
   "version": "0.1.0",
-  "homepage": "https://<YOUR_ORG_OR_USERNAME>.github.io/gh-pages-example/",
+  "homepage": "https://<YOUR_ORG_OR_USERNAME>.github.io/react-example/",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
