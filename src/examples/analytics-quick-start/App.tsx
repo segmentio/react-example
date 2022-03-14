@@ -1,11 +1,11 @@
 import React, { useEffect, useRef } from "react"
-import Navbar from "../components/NavBar"
+import Navbar from "../shared/NavBar"
 import { Pane, majorScale } from "evergreen-ui"
-import Header from "../components/Header"
-import AnalyticsEventSection from "../components/ExampleSection"
+import Header from "../shared/Header"
+import AnalyticsEventSection from "../shared/ExampleSection"
 import { AnalyticsWindow } from "./types"
-import analyticsEventSections from "../components/example-sections/constants"
-import TableOfContents from "../components/TableOfContents"
+import analyticsEventSections from "../shared/example-sections/constants"
+import TableOfContents from "../shared/TableOfContents"
 
 declare let window: AnalyticsWindow
 
