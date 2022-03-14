@@ -11,15 +11,19 @@ export const AnalyticsProvider: React.FC<AnalyticsProviderProps> = ({ children }
 
     const [analytics, setAnalytics] = useState<Analytics|undefined>(undefined)
 
-    useEffect(() => {
-        if (!WRITE_KEY) return
-        const loadAnalytics = async () => {
-            const [response] = await AnalyticsBrowser.load({ writeKey: WRITE_KEY })
-            setAnalytics(response)
+    const loadAnalytics = async () => {
+        const analyticsJsLoaded = Boolean(analytics)
+        if (!WRITE_KEY || analyticsJsLoaded) {
+            return
         }
-        loadAnalytics()
-    }, [WRITE_KEY])
 
-    // eslint-disable-next-line react/jsx-no-constructed-context-values
+        const [response] = await AnalyticsBrowser.load({ writeKey: WRITE_KEY })
+        setAnalytics(response)
+    }
+
+    useEffect(() => {
+        loadAnalytics()
+    }, [WRITE_KEY, analytics])
+
     return <AnalyticsContext.Provider value={{ analytics }}>{children}</AnalyticsContext.Provider>
 }

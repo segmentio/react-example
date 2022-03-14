@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import Navbar from "../shared/NavBar"
 import { Pane, majorScale } from "evergreen-ui"
 import Header from "../shared/Header"
@@ -7,12 +7,15 @@ import analyticsEventSections from "../shared/example-sections/constants"
 import TableOfContents from "../shared/TableOfContents"
 import { AnalyticsProvider } from "./analytics-context"
 import useScrollIntoView from "../shared/useScrollIntoView"
-
-
+import useAnalytics from "./useAnalytics"
 
 const App: React.FC = () => {
     const [getSectionRef, scrollIntoRefView] = useScrollIntoView()
+    const { homePageViewed } = useAnalytics()
 
+    useEffect(() => {
+        homePageViewed() 
+    }, [homePageViewed])
 
     return (
         <AnalyticsProvider>

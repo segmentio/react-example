@@ -25,7 +25,7 @@ const SourceWriteKeyExample: React.FC = () => (
         </Pane>
        
         <img 
-            style={{ "max-width": "50%" } as any}
+            style={{ "maxWidth": "50%" }}
             src={SourceSettingsImage}
             alt="Source settings page"
         />
