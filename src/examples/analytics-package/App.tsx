@@ -1,4 +1,4 @@
-import React, { useRef } from "react"
+import React from "react"
 import Navbar from "../shared/NavBar"
 import { Pane, majorScale } from "evergreen-ui"
 import Header from "../shared/Header"
@@ -6,15 +6,13 @@ import AnalyticsEventSection from "../shared/ExampleSection"
 import analyticsEventSections from "../shared/example-sections/constants"
 import TableOfContents from "../shared/TableOfContents"
 import { AnalyticsProvider } from "./analytics-context"
+import useScrollIntoView from "../shared/useScrollIntoView"
+
 
 
 const App: React.FC = () => {
-    const sectionRefs = analyticsEventSections.map(section => ({ title: section.title, ref: useRef<HTMLDivElement>(null) }))
+    const [getSectionRef, scrollIntoRefView] = useScrollIntoView()
 
-    const handleNavContentClick = (index: number) => {
-        const sectionRef = sectionRefs[index]
-        sectionRef.ref.current?.scrollIntoView()
-    }
 
     return (
         <AnalyticsProvider>
@@ -22,14 +20,14 @@ const App: React.FC = () => {
                 <Navbar/>
                 <Pane paddingX={majorScale(30)}>
                     <Header />
-                    <TableOfContents onContentClick={handleNavContentClick} />
+                    <TableOfContents onContentClick={scrollIntoRefView} />
                     {analyticsEventSections.map((section, i) => {
                         const { title, description, children: Example } = section
 
                         return (
                             <AnalyticsEventSection 
                                 key={i}
-                                innerRef={sectionRefs[i].ref}
+                                innerRef={getSectionRef(i)}
                                 title={title}
                                 description={description}>{Example && <Example/>}
                             </AnalyticsEventSection>
