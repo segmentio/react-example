@@ -3,11 +3,11 @@ import { homePageViewed } from "./analytics"
 import BaseApp from "../shared/BaseApp"
 
 const App: React.FC = () => {
-    useEffect(() => {
-        homePageViewed()   
-    }, [])
+  useEffect(() => {
+    homePageViewed()
+  }, [])
 
-    return <BaseApp/>
+  return <BaseApp />
 }
 
 export default App

@@ -3,19 +3,18 @@ import { AnalyticsProvider } from "./analytics-context"
 import useAnalytics from "./useAnalytics"
 import BaseApp from "../shared/BaseApp"
 
-
 const App: React.FC = () => {
-    const { homePageViewed } = useAnalytics()
+  const { homePageViewed } = useAnalytics()
 
-    useEffect(() => {
-        homePageViewed() 
-    }, [homePageViewed])
+  useEffect(() => {
+    homePageViewed()
+  }, [homePageViewed])
 
-    return (
-        <AnalyticsProvider>
-            <BaseApp />
-        </AnalyticsProvider>     
-    )
+  return (
+    <AnalyticsProvider>
+      <BaseApp />
+    </AnalyticsProvider>
+  )
 }
 
 export default App

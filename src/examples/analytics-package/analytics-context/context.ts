@@ -2,11 +2,13 @@ import { Analytics } from "@segment/analytics-next"
 import { createContext } from "react"
 
 export interface AnalyticsContextProps {
-    analytics: Analytics | undefined
+  analytics: Analytics | undefined
 }
 
 const defaultAnalyticsContext = {
-    analytics: undefined,
+  analytics: undefined,
 }
 
-export const AnalyticsContext = createContext<AnalyticsContextProps>(defaultAnalyticsContext)
+export const AnalyticsContext = createContext<AnalyticsContextProps>(
+  defaultAnalyticsContext
+)
