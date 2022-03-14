@@ -1,5 +1,7 @@
 import React from "react"
 import { Pane, majorScale, Text, Link, minorScale } from "evergreen-ui"
+import DebuggerImage from "./Debugger.png"
+
 
 const PageExample: React.FC = () => (
     <Pane 
@@ -18,6 +20,7 @@ const PageExample: React.FC = () => (
        
         <img 
             style={{ "max-width": "50%" } as any}
+            src={DebuggerImage}
             alt="Debugger with page() call"
         />
     </Pane>

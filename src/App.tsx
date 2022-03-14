@@ -27,6 +27,12 @@ const App: React.FC = () => {
                 >
                     <SourceWriteKeyExample/>
                 </AnalyticsEventSection>
+                <AnalyticsEventSection 
+                    title="analytics.page()"
+                    description="The page call lets you record whenever a user sees a page of your website, along with any optional properties about the page."
+                >
+                    <PageExample/>
+                </AnalyticsEventSection>
             </Pane>
         </Pane>
     )
