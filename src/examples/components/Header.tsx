@@ -5,9 +5,8 @@ const Header: React.FC = () => (
     <Pane 
         display="flex"
         flexDirection="column"
-        marginTop={majorScale(2)}
+        paddingY={majorScale(4)}
         borderBottom={"1px solid grey"}
-        paddingBottom={majorScale(2)}
     >
         <Heading size={800}>Getting Started</Heading>
         <Text marginTop={majorScale(1)}>This page has examples implementing Segment’s Page, Track, Identify, and Group calls.</Text>

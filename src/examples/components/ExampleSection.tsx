@@ -1,16 +1,18 @@
 import React from "react"
 import { Pane, Heading, majorScale, Text } from "evergreen-ui"
+import { Ref } from "react"
 
-const ExampleSection: React.FC<{title: string, description: string, children: React.ReactNode}> = ({ title, description, children }) => (
+const ExampleSection: React.FC<{title: string, description: string, children: React.ReactNode} & {innerRef: Ref<HTMLDivElement>}> = ({ title, description, children, innerRef }) => (
     <Pane 
+        ref={innerRef}
         display="flex"
         flexDirection="column"
-        marginTop={majorScale(2)}
         borderBottom={"1px solid grey"}
-        paddingBottom={majorScale(2)}
+        paddingY={majorScale(4)}
     >
         <Heading size={600}>{title}</Heading>
-        <Text marginTop={majorScale(1)}>{description}</Text>
+        <Text marginTop={majorScale(1)}
+            marginBottom={majorScale(3)}>{description}</Text>
         {children}
     </Pane>
 )

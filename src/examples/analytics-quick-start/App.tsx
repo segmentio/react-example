@@ -1,37 +1,44 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useRef } from "react"
 import Navbar from "../components/NavBar"
 import { Pane, majorScale } from "evergreen-ui"
 import Header from "../components/Header"
 import AnalyticsEventSection from "../components/ExampleSection"
-import SourceWriteKeyExample from "../components/example-sections/source-write-key"
-import PageExample from "../components/example-sections/page"
 import { AnalyticsWindow } from "./types"
+import analyticsEventSections from "../components/example-sections/constants"
+import TableOfContents from "../components/TableOfContents"
 
 declare let window: AnalyticsWindow
 
 const App: React.FC = () => {
     const { analytics } = window
     useEffect(() => {
-        // analytics.page("category", "name")
         analytics.page("App", "Home")
     }, [])
+
+    const sectionRefs = analyticsEventSections.map(section => ({ title: section.title, ref: useRef<HTMLDivElement>(null) }))
+
+    const handleNavContentClick = (index: number) => {
+        const sectionRef = sectionRefs[index]
+        sectionRef.ref.current?.scrollIntoView()
+    }
+
     return (
-        <Pane>
+        <Pane paddingBottom={majorScale(20)}>
             <Navbar/>
-            <Pane paddingX={majorScale(3)}>
+            <Pane paddingX={majorScale(30)}>
                 <Header />
-                <AnalyticsEventSection 
-                    title="The Source Write Key"
-                    description="You must first set up this Source in order to see events flowing through your debugger."
-                >
-                    <SourceWriteKeyExample/>
-                </AnalyticsEventSection>
-                <AnalyticsEventSection 
-                    title="analytics.page()"
-                    description="The page call lets you record whenever a user sees a page of your website, along with any optional properties about the page."
-                >
-                    <PageExample/>
-                </AnalyticsEventSection>
+                <TableOfContents onContentClick={handleNavContentClick} />
+                {analyticsEventSections.map((section, i) => {
+                    const { title, description, children: Example } = section
+
+                    return (
+                        <AnalyticsEventSection 
+                            key={i}
+                            innerRef={sectionRefs[i].ref}
+                            title={title}
+                            description={description}>{Example && <Example/>}
+                        </AnalyticsEventSection>
+                    )})}
             </Pane>
         </Pane>
     )
