@@ -9,16 +9,19 @@ const TableOfContents: React.FC<{onContentClick: (index: number) => void}> = ({ 
             display="flex"
             flexDirection="column"
             paddingY={majorScale(4)}
-            borderBottom={"1px solid grey"}
+            borderBottom
         >
             {contents.map((title, i) => {
-                return <Link key={i}
-                    cursor="pointer"
-                    onClick={() => {
-                        onContentClick(i)
-                    }}
-                    marginTop={majorScale(1)}
-                >{title}</Link>
+                return (
+                    <Link 
+                        key={i}
+                        cursor="pointer"
+                        onClick={() => {
+                            onContentClick(i)
+                        }}
+                        marginTop={majorScale(1)}
+                    >{title}</Link>
+                )
             })}
         </Pane>
     )}

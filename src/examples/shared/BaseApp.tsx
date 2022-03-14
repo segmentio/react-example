@@ -8,7 +8,7 @@ import TableOfContents from "./TableOfContents"
 import useScrollIntoView from "./useScrollIntoView"
 
 const App: React.FC = () => {
-    const [getSectionRef, scrollIntoRefView] = useScrollIntoView()
+    const { getSectionRef, scrollIntoRefView } = useScrollIntoView()
 
     return (
         <Pane paddingBottom={majorScale(20)}>

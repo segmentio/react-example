@@ -1,8 +1,14 @@
 import SourceWriteKeyExample from "./source-write-key"
 import PageExample from "./page"
+import React from "react"
 
+interface AnalyticsEventSection {
+    title: string
+    description: string
+    children?: React.FC
+}
 
-const analyticsEventSections = [
+const analyticsEventSections: AnalyticsEventSection[] = [
     {
         title: "The Source Write Key",
         description: "You must first set up this Source in order to see events flowing through your debugger.",

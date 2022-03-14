@@ -1,5 +1,5 @@
 import React from "react"
-import { Pane, majorScale, Text, Link, minorScale } from "evergreen-ui"
+import { Pane, majorScale, Text, Link, minorScale, Image } from "evergreen-ui"
 import SourceSettingsImage from "./SourceSettings.png"
 
 const SourceWriteKeyExample: React.FC = () => (
@@ -24,8 +24,8 @@ const SourceWriteKeyExample: React.FC = () => (
             </Text>
         </Pane>
        
-        <img 
-            style={{ "maxWidth": "50%" }}
+        <Image 
+            maxWidth="50%"
             src={SourceSettingsImage}
             alt="Source settings page"
         />
