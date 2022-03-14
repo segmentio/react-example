@@ -76,6 +76,11 @@ In the project directory, you can run:
 
 ### `yarn start`
 
+To run the page with analytics calls, run 
+```
+REACT_APP_SEGMENT_WRITE_KEY=<write_key_here> yarn start
+```
+
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
