@@ -39,11 +39,11 @@ const Navbar: React.FC = () => (
         <Pane>
             <NavButton 
                 icon={GitRepoIcon}
-                href="https://app.segment.com/"
+                href="https://github.com/segmentio/react-example"
             />
             <NavButton 
                 icon={BookIcon}
-                href="https://app.segment.com/"
+                href="https://segment.com/docs/"
             />
         </Pane>
     </Pane>
