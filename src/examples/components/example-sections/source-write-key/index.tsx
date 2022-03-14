@@ -1,5 +1,5 @@
 import React from "react"
-import { Pane, majorScale, Text, Link } from "evergreen-ui"
+import { Pane, majorScale, Text, Link, minorScale } from "evergreen-ui"
 import SourceSettingsImage from "./SourceSettings.png"
 
 const SourceWriteKeyExample: React.FC = () => (
@@ -15,8 +15,7 @@ const SourceWriteKeyExample: React.FC = () => (
             <Text>Your Source Write Key is found in your Source settings. Supplementary documentation can be found{" "}
                 <Link href="https://segment.com/docs/connections/find-writekey/">here.</Link>
             </Text>
-            <br/>
-            <Text>After copying your Source Write Key, follow the steps{" "}
+            <Text marginTop={minorScale(1)}>After copying your Source Write Key, follow the steps{" "}
                 <Link 
                     target="blank_"
                     href="https://github.com/segmentio/react-example#using-this-repository-as-a-segment-source">
