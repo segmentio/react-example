@@ -1,4 +1,4 @@
-import { useRef } from "react"
+import { createRef, RefObject,  useRef } from "react"
 import analyticsEventSections from "./example-sections/constants"
 
 interface UseScrollIntoViewPayload {
@@ -7,18 +7,16 @@ interface UseScrollIntoViewPayload {
 }
 
 const useScrollIntoView = (): UseScrollIntoViewPayload => {
-  const sectionRefs = analyticsEventSections.map((_) =>
-    useRef<HTMLDivElement>(null)
-  )
+    const sectionsRef = useRef<Array<RefObject<HTMLDivElement>>>(analyticsEventSections.map(() => createRef<HTMLDivElement>()))
 
-  const getSectionRef = (index: number) => sectionRefs[index]
+    const getSectionRef = (index: number) => sectionsRef.current[index]
 
-  const scrollIntoRefView = (index: number) => {
-    const sectionRef = getSectionRef(index)
-    sectionRef.current?.scrollIntoView()
-  }
+    const scrollIntoRefView = (index: number) => {
+        const sectionRef = getSectionRef(index)
+        sectionRef?.current?.scrollIntoView()
+    }
 
-  return { getSectionRef, scrollIntoRefView }
+    return { getSectionRef, scrollIntoRefView }
 }
 
 export default useScrollIntoView
