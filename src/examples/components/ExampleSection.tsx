@@ -6,7 +6,7 @@ const ExampleSection: React.FC<{title: string, description: string, children: Re
         display="flex"
         flexDirection="column"
         marginTop={majorScale(2)}
-        borderBottom={"1px solid"}
+        borderBottom={"1px solid grey"}
         paddingBottom={majorScale(2)}
     >
         <Heading size={600}>{title}</Heading>

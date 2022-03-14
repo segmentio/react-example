@@ -6,7 +6,7 @@ const Header: React.FC = () => (
         display="flex"
         flexDirection="column"
         marginTop={majorScale(2)}
-        borderBottom={"1px solid"}
+        borderBottom={"1px solid grey"}
         paddingBottom={majorScale(2)}
     >
         <Heading size={800}>Getting Started</Heading>
