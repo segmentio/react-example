@@ -1,12 +1,21 @@
-import React from "react"
+import React, { useEffect } from "react"
 import "./App.css"
 import Navbar from "./examples/components/NavBar"
 import { Pane, majorScale } from "evergreen-ui"
 import Header from "./examples/components/Header"
 import AnalyticsEventSection from "./examples/components/ExampleSection"
 import SourceWriteKeyExample from "./examples/components/example-sections/source-write-key"
+import PageExample from "./examples/components/example-sections/page"
+import { AnalyticsWindow } from "./types"
+
+declare let window: AnalyticsWindow
 
 const App: React.FC = () => {
+    const { analytics } = window
+    useEffect(() => {
+        // analytics.page("category", "name")
+        analytics.page("App", "Home")
+    }, [])
     return (
         <Pane>
             <Navbar/>
