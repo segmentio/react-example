@@ -1,11 +1,11 @@
 import React from "react"
-import Navbar from "../shared/NavBar"
+import Navbar from "./NavBar"
 import { Pane, majorScale } from "evergreen-ui"
-import Header from "../shared/Header"
-import AnalyticsEventSection from "../shared/ExampleSection"
-import analyticsEventSections from "../shared/example-sections/constants"
-import TableOfContents from "../shared/TableOfContents"
-import useScrollIntoView from "../shared/useScrollIntoView"
+import Header from "./Header"
+import AnalyticsEventSection from "./ExampleSection"
+import analyticsEventSections from "./example-sections/constants"
+import TableOfContents from "./TableOfContents"
+import useScrollIntoView from "./useScrollIntoView"
 
 const App: React.FC = () => {
     const [getSectionRef, scrollIntoRefView] = useScrollIntoView()
