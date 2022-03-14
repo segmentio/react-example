@@ -27,10 +27,10 @@ jobs:
           key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-yarn-
-      
+
       - name: Installing Dependencies
         run: yarn install
-      
+
       - name: Building App
         run: yarn build
         env:
@@ -42,4 +42,3 @@ jobs:
           npx gh-pages -d build -u "github-actions-bot <support+actions@github.com>"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          
