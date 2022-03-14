@@ -1,7 +1,7 @@
 import React, { useEffect } from "react"
 import { AnalyticsProvider } from "./analytics-context"
 import useAnalytics from "./useAnalytics"
-import BaseApp from "../shared/App"
+import BaseApp from "../shared/BaseApp"
 
 
 const App: React.FC = () => {
