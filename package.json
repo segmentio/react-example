@@ -4,6 +4,7 @@
   "homepage": "https://<YOUR_ORG_OR_USERNAME>.github.io/react-example/",
   "private": true,
   "dependencies": {
+    "@segment/analytics-next": "^1.33.5",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^12.0.0",
     "@testing-library/user-event": "^13.2.1",
