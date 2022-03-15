@@ -33,6 +33,8 @@ Trace the analytics functions in this file to view where analytics calls are bei
 
 We recommend planning a [full Segment installation](https://segment.com/docs/getting-started/03-planning-full-install/) to determine which events & properties to track utilize data meaningfully.
 
+For teams who are planning extensive analytics calls, we recommend [Protocols](https://segment.com/docs/protocols/) to align teams with a Tracking Plan, allow/block/omit events & properties, resolve data issues with Transformations, and more. Protocols also includes typed event generation through [typewriter](https://segment.com/docs/protocols/apis-and-extensions/typewriter/).
+
 ### types.ts
 
 As this is a typescript example, we must extend the `Window` in order for us to call `analytics` without erroring. This file is not required when using javascript.
