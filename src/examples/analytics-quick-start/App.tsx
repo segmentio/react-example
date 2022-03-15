@@ -1,12 +1,7 @@
-import React, { useEffect } from "react"
-import { homePageViewed } from "./analytics"
+import React from "react"
 import BaseApp from "../shared/BaseApp"
 
 const App: React.FC = () => {
-  useEffect(() => {
-    homePageViewed()
-  }, [])
-
   return <BaseApp />
 }
 

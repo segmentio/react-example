@@ -6,9 +6,17 @@ import AnalyticsEventSection from "./ExampleSection"
 import analyticsEventSections from "./example-sections/constants"
 import TableOfContents from "./TableOfContents"
 import useScrollIntoView from "./useScrollIntoView"
+// import useAnalytics from "../analytics-package/useAnalytics"
+import { pageViewed } from "../analytics-quick-start/analytics"
 
 const App: React.FC = () => {
   const { getSectionRef, scrollIntoRefView } = useScrollIntoView()
+
+  // const { pageViewed } = useAnalytics()
+
+  React.useEffect(() => {
+    pageViewed("Home")
+  }, [pageViewed])
 
   return (
     <Pane paddingBottom={majorScale(20)}>

@@ -25,7 +25,7 @@ export const AnalyticsProvider: React.FC<AnalyticsProviderProps> = ({
 
   useEffect(() => {
     loadAnalytics()
-  }, [WRITE_KEY, analytics])
+  }, [WRITE_KEY])
 
   return (
     <AnalyticsContext.Provider value={{ analytics }}>
