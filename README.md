@@ -29,7 +29,7 @@ This repository can quickly be set up to be a [Segment Source](https://segment.c
     - Add `REACT_APP_SEGMENT_WRITE_KEY` as the secret's name, with the source write key as the value
       ![GH create Secret page](./public/readmeImages/ghNewSecret.png)
 
-          After adding the secret, you should be able to see your Secret
+        After adding the secret to Github, you should be able to see your Secret:
           ![GH Secrets page](./public/readmeImages/ghSecrets.png)
 
 4.  Copy the URL provided by Github in the `Pages` option under `Code and Automation` section in the sidebar
@@ -76,7 +76,8 @@ In the project directory, you can run:
 
 ### `yarn start`
 
-To run the page with analytics calls, run 
+To run the page with analytics calls, run
+
 ```
 REACT_APP_SEGMENT_WRITE_KEY=<write_key_here> yarn start
 ```
