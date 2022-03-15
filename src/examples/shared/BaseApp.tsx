@@ -6,12 +6,14 @@ import AnalyticsEventSection from "./ExampleSection"
 import analyticsEventSections from "./example-sections/constants"
 import TableOfContents from "./TableOfContents"
 import useScrollIntoView from "./useScrollIntoView"
+// UNCOMMENT FOR PACKAGE EXAMPLE
 // import useAnalytics from "../analytics-package/useAnalytics"
 import { pageViewed } from "../analytics-quick-start/analytics"
 
 const App: React.FC = () => {
   const { getSectionRef, scrollIntoRefView } = useScrollIntoView()
 
+  // UNCOMMENT FOR PACKAGE EXAMPLE
   // const { pageViewed } = useAnalytics()
 
   React.useEffect(() => {

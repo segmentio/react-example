@@ -14,8 +14,7 @@ export const AnalyticsProvider: React.FC<AnalyticsProviderProps> = ({
   const [analytics, setAnalytics] = useState<Analytics | undefined>(undefined)
 
   const loadAnalytics = async () => {
-    const analyticsJsLoaded = Boolean(analytics)
-    if (!WRITE_KEY || analyticsJsLoaded) {
+    if (!WRITE_KEY || analytics) {
       return
     }
 
