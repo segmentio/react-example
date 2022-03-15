@@ -16,6 +16,9 @@ This section provides a breakdown of all the files and file changes required to 
 ### [package.json](https://github.com/segmentio/react-example/blob/main/package.json)
 
 You must install the npm package. This step is already [done](https://github.com/segmentio/react-example/blob/53ecd804f449dd06e3080c6d822b26c0a11063f4/package.json#L7) for this repo.
+
+Unlike the snippet implementation, if there are changes to this library, they must be manually updated with the package manager.
+
 ```
 # npm 
 npm install @segment/analytics-next
@@ -31,7 +34,7 @@ pnpm add @segment/analytics-next
 
 Comment out the Segment snippet in the [index.html](https://github.com/segmentio/react-example/blob/53ecd804f449dd06e3080c6d822b26c0a11063f4/public/index.html#L16-L21) file. 
 
-Unlike the [snippet instrumentation](https://github.com/segmentio/react-example/tree/main/src/examples/analytics-quick-start#indexhtml), we load analytics _after_ the page mounts on the DOM.
+Unlike the [snippet instrumentation](https://github.com/segmentio/react-example/tree/main/src/examples/analytics-quick-start#indexhtml), using the npm package loads analytics _after_ the page mounts on the DOM.
 
 ### [Analytics Context](https://github.com/segmentio/react-example/tree/main/src/examples/analytics-package/analytics-context)
 
