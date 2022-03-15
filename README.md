@@ -13,7 +13,7 @@ _Supplementary documentation about a basic Segment instrumentation can be found 
 
 This site is currently deployed using GitHub Pages on http://segmentio.github.io/react-example/.
 
-You can quickly deploy the same site and use this repository as a [Segment Source](https://segment.com/docs/connections/sources/) so you can see data flowing through your debugger in real time:
+You can quickly deploy the same site and use this repository as a [Segment Javascript Source](https://segment.com/docs/connections/sources/#website-libraries) so you can see data flowing through your debugger in real time:
 
 1.  Fork this repository
     ![GH Fork Button](./public/readmeImages/ghForkButton.png)
