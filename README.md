@@ -2,8 +2,8 @@
 
 This project provides 2 examples of how to implement Segment's Javascript source ([Analytics 2.0](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/)) in a React app:
 
-- [As a Segment Snippet](link_to_analytics_quickstart_readme) | _[Additional Documentation](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/quickstart/)
-- [Through an NPM package](link_to_analytics_package_readme) | _[Additional Documentation](https://github.com/segmentio/analytics-next#-using-as-an-npm-package)_
+- [As a Segment Snippet](https://github.com/segmentio/react-example/tree/main/src/examples/analytics-quick-start) | _[Additional Documentation](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/quickstart/)_
+- [Through an NPM package](https://github.com/segmentio/react-example/tree/main/src/examples/analytics-package) | _[Additional Documentation](https://github.com/segmentio/analytics-next#-using-as-an-npm-package)_
 
 Curious about Segment? You can learn about it more [here](https://segment.com/docs/getting-started/).
 
