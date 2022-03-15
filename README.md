@@ -31,8 +31,8 @@ You can quickly deploy the same site and use this repository as a [Segment Javas
     - Add `REACT_APP_SEGMENT_WRITE_KEY` as the secret's name, with the source write key as the value
       ![GH create Secret page](./public/readmeImages/ghNewSecret.png)
 
-        After adding the secret to Github, you should be able to see your Secret:
-          ![GH Secrets page](./public/readmeImages/ghSecrets.png)
+      After adding the secret to Github, you should be able to see your Secret:
+      ![GH Secrets page](./public/readmeImages/ghSecrets.png)
 
 4.  Copy the URL provided by Github in the `Pages` option under `Code and Automation` section in the sidebar
 
@@ -69,6 +69,10 @@ Sometimes, this is not the case, meaning that the `SOURCE_WRITE_KEY` environment
 ![GH Actions redeploy run](./public/readmeImages/ghPagesRedeploy.png)
 
 _Note: relatedly, not being able to access Segment's analytics will not impact your App from running._
+
+## [Evergreen](https://evergreen.segment.com/)
+
+The JSX examples in this repo use Segment's design system, Evergreen. [Check it out!](https://evergreen.segment.com/introduction/getting-started)
 
 ## Available Scripts
 
