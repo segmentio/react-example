@@ -30,6 +30,10 @@ yarn add @segment/analytics-next
 pnpm add @segment/analytics-next
 ```
 
+### [index.tsx](https://github.com/segmentio/react-example/blob/main/src/index.tsx)
+
+The App rendered by default is the one for the Segment snippet. Import the one for the analytics package instead.
+
 ### [index.html](https://github.com/segmentio/react-example/blob/main/public/index.html)
 
 Comment out the Segment snippet in the [index.html](https://github.com/segmentio/react-example/blob/53ecd804f449dd06e3080c6d822b26c0a11063f4/public/index.html#L16-L21) file. 
