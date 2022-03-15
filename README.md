@@ -2,8 +2,8 @@
 
 This project provides 2 examples of how to implement Segment's Javascript source ([Analytics 2.0](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/)) in a React app:
 
-- [As a Segment Snippet](link_to_analytics_quickstart_readme) | _[Additional Documentation](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/quickstart/)
-- [Through an NPM package](link_to_analytics_package_readme) | _[Additional Documentation](https://github.com/segmentio/analytics-next#-using-as-an-npm-package)_
+- [As a Segment Snippet](https://github.com/segmentio/react-example/tree/main/src/examples/analytics-quick-start) | _[Additional Documentation](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/quickstart/)_
+- [Through an NPM package](https://github.com/segmentio/react-example/tree/main/src/examples/analytics-package) | _[Additional Documentation](https://github.com/segmentio/analytics-next#-using-as-an-npm-package)_
 
 Curious about Segment? You can learn about it more [here](https://segment.com/docs/getting-started/).
 
@@ -11,7 +11,9 @@ Curious about Segment? You can learn about it more [here](https://segment.com/do
 
 _Supplementary documentation about a basic Segment instrumentation can be found [here](https://segment.com/docs/getting-started/02-simple-install/)._
 
-This repository can quickly be set up to be a [Segment Source](https://segment.com/docs/connections/sources/) so you can see data flowing through in real time:
+This site is currently deployed using GitHub Pages on http://segmentio.github.io/react-example/.
+
+You can quickly deploy the same site and use this repository as a [Segment Javascript Source](https://segment.com/docs/connections/sources/#website-libraries) so you can see data flowing through your debugger in real time:
 
 1.  Fork this repository
     ![GH Fork Button](./public/readmeImages/ghForkButton.png)
@@ -29,8 +31,8 @@ This repository can quickly be set up to be a [Segment Source](https://segment.c
     - Add `REACT_APP_SEGMENT_WRITE_KEY` as the secret's name, with the source write key as the value
       ![GH create Secret page](./public/readmeImages/ghNewSecret.png)
 
-        After adding the secret to Github, you should be able to see your Secret:
-          ![GH Secrets page](./public/readmeImages/ghSecrets.png)
+      After adding the secret to Github, you should be able to see your Secret:
+      ![GH Secrets page](./public/readmeImages/ghSecrets.png)
 
 4.  Copy the URL provided by Github in the `Pages` option under `Code and Automation` section in the sidebar
 
@@ -67,6 +69,10 @@ Sometimes, this is not the case, meaning that the `SOURCE_WRITE_KEY` environment
 ![GH Actions redeploy run](./public/readmeImages/ghPagesRedeploy.png)
 
 _Note: relatedly, not being able to access Segment's analytics will not impact your App from running._
+
+## [Evergreen](https://evergreen.segment.com/)
+
+The JSX examples in this repo use Segment's design system, Evergreen. [Check it out!](https://evergreen.segment.com/introduction/getting-started)
 
 ## Available Scripts
 
