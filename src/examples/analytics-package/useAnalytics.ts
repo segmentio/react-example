@@ -43,19 +43,16 @@ const useAnalytics = () => {
     [analytics]
   )
 
-  const trackProductAdded = ({
-    color,
-    size,
-  }: {
-    color: ShirtColor
-    size: ShirtSize
-  }) => {
-    analytics?.track("Product Added", {
-      name: "shirt example",
-      color,
-      size,
-    })
-  }
+  const trackProductAdded = useCallback(
+    ({ color, size }: { color: ShirtColor; size: ShirtSize }) => {
+      analytics?.track("Product Added", {
+        name: "shirt example",
+        color,
+        size,
+      })
+    },
+    [analytics]
+  )
 
   const groupUser = useCallback(
     (industry: Industry) => {
