@@ -3,7 +3,7 @@ import Navbar from "./NavBar"
 import { Pane, majorScale } from "evergreen-ui"
 import Header from "./Header"
 import AnalyticsEventSection from "./ExampleSection"
-import analyticsEventSections from "./constants"
+import analyticsEventSections from "./example-sections/constants"
 import TableOfContents from "./TableOfContents"
 import useScrollIntoView from "./useScrollIntoView"
 // UNCOMMENT FOR PACKAGE EXAMPLE

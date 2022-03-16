@@ -1,11 +1,11 @@
-import SourceWriteKeyExample from "./example-sections/source-write-key"
-import PageExample from "./example-sections/page"
+import SourceWriteKeyExample from "./source-write-key"
+import PageExample from "./page"
 import React from "react"
-import TrackExample from "./example-sections/track"
-import IdentifyExample from "./example-sections/identify"
-import PuttingItAllTogetherExample from "./example-sections/putting-it-all-together"
-import MoreExamplesTrack from "./example-sections/more-examples-track"
-import MoreExamplesGroup from "./example-sections/more-examples-group"
+import TrackExample from "./track"
+import IdentifyExample from "./identify"
+import PuttingItAllTogetherExample from "./putting-it-all-together"
+import MoreExamplesTrack from "./more-examples-track"
+import MoreExamplesGroup from "./more-examples-group"
 
 interface AnalyticsEventSection {
   title: string
