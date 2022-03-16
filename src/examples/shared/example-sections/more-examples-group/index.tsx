@@ -87,7 +87,7 @@ const MoreExamplesGroup: React.FC = () => {
       <Image
         maxWidth="50%"
         src={DebuggerImage}
-        alt="Debugger with track() call"
+        alt="Debugger with group() call"
       />
     </Pane>
   )
