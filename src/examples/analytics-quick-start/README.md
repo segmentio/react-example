@@ -13,6 +13,10 @@ We generally recommend using the Segment snippet when configuring a source as it
 
 This section provides a breakdown of all the files and file changes required to implement Segment through the snippet.
 
+### [index.tsx](https://github.com/segmentio/react-example/blob/main/src/index.tsx)
+
+The App rendered by default is the one for the Segment snippet. There are no changes required.
+
 ### [index.html](https://github.com/segmentio/react-example/blob/main/public/index.html)
 
 We load the Segment snippet in the [index.html](https://github.com/segmentio/react-example/blob/54d8e648e7137ac27321825a7e3eb6a1736d88eb/public/index.html#L12-L17) file. 
