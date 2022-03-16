@@ -1,6 +1,6 @@
 import React from "react"
 import { Pane, majorScale, Link } from "evergreen-ui"
-import analyticsEventSections from "./example-sections/constants"
+import analyticsEventSections from "./constants"
 import { tableOfContentsItemClicked } from "../analytics-quick-start/analytics"
 // UNCOMMENT FOR PACKAGE EXAMPLE
 // import useAnalytics from "../analytics-package/useAnalytics"

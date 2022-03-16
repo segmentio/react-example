@@ -1,5 +1,5 @@
 import { createRef, RefObject, useRef } from "react"
-import analyticsEventSections from "./example-sections/constants"
+import analyticsEventSections from "./constants"
 
 interface UseScrollIntoViewPayload {
   getSectionRef: (index: number) => React.RefObject<HTMLDivElement>

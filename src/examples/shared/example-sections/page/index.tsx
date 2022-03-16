@@ -11,7 +11,7 @@ const PageExample: React.FC = () => (
           href="https://segment.com/docs/connections/spec/page/"
           target="blank_"
         >
-          page
+          Page
         </Link>{" "}
         event was fired and sent to your debugger.
       </Text>

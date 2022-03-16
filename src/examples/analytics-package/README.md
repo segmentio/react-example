@@ -20,7 +20,7 @@ You must install the npm package. This step is already [done](https://github.com
 Unlike the snippet implementation, if there are changes to this library, they must be manually updated with the package manager.
 
 ```
-# npm 
+# npm
 npm install @segment/analytics-next
 
 # yarn
@@ -36,7 +36,7 @@ The App rendered by default is the one for the Segment snippet. Import the one f
 
 ### [index.html](https://github.com/segmentio/react-example/blob/main/public/index.html)
 
-Comment out the Segment snippet in the [index.html](https://github.com/segmentio/react-example/blob/53ecd804f449dd06e3080c6d822b26c0a11063f4/public/index.html#L16-L21) file. 
+Comment out the Segment snippet in the [index.html](https://github.com/segmentio/react-example/blob/53ecd804f449dd06e3080c6d822b26c0a11063f4/public/index.html#L16-L21) file.
 
 Unlike the [snippet instrumentation](https://github.com/segmentio/react-example/tree/main/src/examples/analytics-quick-start#indexhtml), using the npm package loads analytics _after_ the page mounts on the DOM.
 
@@ -44,7 +44,7 @@ Unlike the [snippet instrumentation](https://github.com/segmentio/react-example/
 
 React context allows us to pass down and use values in components we need without using props. More information on using React's context [here](https://reactjs.org/docs/context.html).
 
-**Important:** Since we are not using the snippet to put `analytics` in the global `Window`, we must declare it in order to use it. 
+**Important:** Since we are not using the snippet to put `analytics` in the global `Window`, we must declare it in order to use it.
 
 We do not want to load analytics in every component manually or through a hook, or manually pass it down to every child. This could potentially load analytics more than once throughout your app and could lead to clunky code.
 
