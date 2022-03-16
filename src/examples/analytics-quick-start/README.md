@@ -19,7 +19,7 @@ The App rendered by default is the one for the Segment snippet. There are no cha
 
 ### [index.html](https://github.com/segmentio/react-example/blob/main/public/index.html)
 
-We load the Segment snippet in the [index.html](https://github.com/segmentio/react-example/blob/54d8e648e7137ac27321825a7e3eb6a1736d88eb/public/index.html#L12-L17) file. 
+We load the Segment snippet in the [index.html](https://github.com/segmentio/react-example/blob/54d8e648e7137ac27321825a7e3eb6a1736d88eb/public/index.html#L12-L17) file.
 
 By placing the snippet in the `<head>` of your `index.html`, Segment is loaded asyncronously and will not affect your page's load speed. Once the page is mounted onto the DOM, `analytics` calls can be immediately placed.
 
@@ -42,5 +42,3 @@ For teams who are planning extensive analytics calls, we recommend [Protocols](h
 ### [types.ts](https://github.com/segmentio/react-example/blob/main/src/examples/analytics-quick-start/types.ts)
 
 As this is a typescript example, we must extend the `Window` in order for us to call `analytics` without erroring. This file is not required when using javascript.
-
-

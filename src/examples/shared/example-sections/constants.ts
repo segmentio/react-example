@@ -1,6 +1,11 @@
 import SourceWriteKeyExample from "./source-write-key"
 import PageExample from "./page"
 import React from "react"
+import TrackExample from "./track"
+import IdentifyExample from "./identify"
+import PuttingItAllTogetherExample from "./putting-it-all-together"
+import MoreExamplesTrack from "./more-examples-track"
+import MoreExamplesGroup from "./more-examples-group"
 
 interface AnalyticsEventSection {
   title: string
@@ -18,35 +23,37 @@ const analyticsEventSections: AnalyticsEventSection[] = [
   {
     title: "analytics.page()",
     description:
-      "The page call lets you record whenever a user sees a page of your website, along with any optional properties about the page.",
+      "The Page call lets you record whenever a user sees a page of your website, along with any optional properties about the page.",
     children: PageExample,
   },
   {
     title: "analytics.track()",
     description:
-      "The track call is how you record any actions your users perform, along with any properties that describe the action.",
+      "The Track call is how you record any actions your users perform, along with any properties that describe the action.",
+    children: TrackExample,
   },
   {
     title: "analytics.identify()",
     description:
-      "The identify call lets you tie a user to their actions and record traits about them. It includes a unique User ID and any optional traits you know about the user, like their email, name, etc.",
+      "The Identify call lets you tie a user to their actions and record traits about them. It includes a unique User ID and any optional traits you know about the user, like their email, name, etc.",
+    children: IdentifyExample,
   },
   {
     title: "Putting it all together",
     description:
-      "You can use track and identify to understand who is doing what.",
+      "You can use Track and Identify to understand who is doing what.",
+    children: PuttingItAllTogetherExample,
   },
   {
     title: "More examples: analytics.track()",
     description: "Product added to cart",
-  },
-  {
-    title: "More examples: analytics.identify()",
-    description: "BLURB",
+    children: MoreExamplesTrack,
   },
   {
     title: "More examples: analytics.group()",
-    description: "BLURB",
+    description:
+      "The Group call is how you associate an individual user with a group—be it a company, organization, account, project, etc.",
+    children: MoreExamplesGroup,
   },
 ]
 
