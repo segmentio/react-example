@@ -13,12 +13,6 @@ export const pageViewed = (name: string, category = "App") => {
   analytics.page(category, name)
 }
 
-export const tableOfContentsItemClicked = (title: string) => {
-  analytics.track("Table of Contents Item Clicked", {
-    title,
-  })
-}
-
 export const trackButtonClicked = (title: string) => {
   analytics.track("Button Clicked", {
     title,

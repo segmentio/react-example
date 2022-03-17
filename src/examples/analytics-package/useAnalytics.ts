@@ -16,15 +16,6 @@ const useAnalytics = () => {
     [analytics]
   )
 
-  const tableOfContentsItemClicked = useCallback(
-    (title: string) => {
-      analytics?.track("Table of Contents Item Clicked", {
-        title,
-      })
-    },
-    [analytics]
-  )
-
   const trackButtonClicked = useCallback(
     (title: string) => {
       analytics?.track("Button Clicked", {
@@ -63,7 +54,6 @@ const useAnalytics = () => {
 
   return {
     pageViewed,
-    tableOfContentsItemClicked,
     trackButtonClicked,
     identifyUser,
     trackProductAdded,
