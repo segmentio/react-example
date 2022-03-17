@@ -1,7 +1,7 @@
 import React from "react"
 import {
   Pane,
-  Text,
+  Button,
   GlobeIcon,
   GitRepoIcon,
   BookIcon,
@@ -36,14 +36,19 @@ const Navbar: React.FC = () => (
     <Pane
       alignItems="center"
       display="flex"
-      is="a"
-      href="https://app.segment.com/"
-      target="blank_"
       textDecoration="none"
       color="inherit"
     >
-      <NavButton icon={GlobeIcon} href="https://app.segment.com/" />
-      <Text>Segment</Text>
+      <Button
+        iconBefore={GlobeIcon}
+        outline="none"
+        appearance="minimal"
+        is="a"
+        href={"https://app.segment.com/"}
+        target="blank_"
+      >
+        Segment
+      </Button>
     </Pane>
     <Pane>
       <NavButton

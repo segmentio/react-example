@@ -1,31 +1,9 @@
 import React from "react"
-import {
-  Pane,
-  majorScale,
-  Text,
-  Button,
-  Image,
-  toaster,
-  EditIcon,
-  CodeBlockIcon,
-  DocumentIcon,
-  Link,
-} from "evergreen-ui"
-import { groupUser } from "../../../analytics-quick-start/analytics"
+import { Pane, majorScale, Text, Image, Link } from "evergreen-ui"
 import DebuggerImage from "./Debugger.png"
-import { Industry, IndustryEnum } from "./types"
-// UNCOMMENT FOR PACKAGE EXAMPLE
-// import useAnalytics from "../../../analytics-package/useAnalytics"
+import IndustrySelectExample from "./IndustrySelectExample"
 
 const MoreExamplesGroup: React.FC = () => {
-  // UNCOMMENT FOR PACKAGE EXAMPLE
-  // const { groupUser } = useAnalytics()
-
-  const handleButtonClick = (industry: Industry) => {
-    groupUser(industry)
-    toaster.success("Group call fired")
-  }
-
   return (
     <Pane
       display="flex"
@@ -33,35 +11,7 @@ const MoreExamplesGroup: React.FC = () => {
       justifyContent="space-between"
     >
       <Pane display="flex" width="100%" flexDirection="column">
-        <Pane display="flex" flexDirection="column" alignSelf="center">
-          <Text marginBottom={majorScale(2)}>Choose your industry:</Text>
-          {Object.values(IndustryEnum).map((industry, i) => {
-            let buttonIcon
-            switch (i) {
-              case 0:
-                buttonIcon = EditIcon
-                break
-              case 1:
-                buttonIcon = DocumentIcon
-                break
-              case 2:
-                buttonIcon = CodeBlockIcon
-                break
-            }
-            return (
-              <Button
-                key={industry}
-                marginY={8}
-                marginRight={12}
-                intent={"none"}
-                iconBefore={buttonIcon}
-                onClick={() => handleButtonClick(industry)}
-              >
-                {industry}
-              </Button>
-            )
-          })}
-        </Pane>
+        <IndustrySelectExample />
 
         <Text marginTop={majorScale(4)}>
           When the button is clicked, a basic{" "}
