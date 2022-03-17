@@ -5,9 +5,13 @@ There are 2 recommended ways to implement Segment's Javascript ([Analytics 2.0](
 - As a Segment Snippet
 - [Through an NPM package](https://github.com/segmentio/react-example/tree/main/src/examples/analytics-package)
 
-**The example deployed through this repo uses the Segment snippet by default.**
+**We generally recommend this method of instrumentation.** The example deployed through this repo uses the Segment snippet by default.
 
-We generally recommend using the Segment snippet when configuring a source as it requires less of an instrumentation lift than configuration using the npm package.
+Benefits of using the Segment snippet:
+
+- Less instrumentation lift
+- Automatic updates whenever the analytics library is updated
+- Hosted through the Segment [CDN](https://segment.com/docs/glossary/#cdn)
 
 ## Implementation
 
