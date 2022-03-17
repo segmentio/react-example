@@ -10,24 +10,29 @@ import {
   toaster,
 } from "evergreen-ui"
 import { trackProductAdded } from "../../../analytics-quick-start/analytics"
-import { ShirtColor, ShirtColorEnum, ShirtSize, ShirtSizeEnum } from "./types"
+import { ShirtColor, ShirtSize } from "./types"
 // UNCOMMENT FOR PACKAGE EXAMPLE
 // import useAnalytics from "../../../analytics-package/useAnalytics"
 
 const ProductAddedExample: React.FC = () => {
   // UNCOMMENT FOR PACKAGE EXAMPLE
   // const { trackProductAdded } = useAnalytics()
-  const [shirtSize, setShirtSize] = React.useState<ShirtSize>(
-    ShirtSizeEnum.medium
-  )
+  const [shirtSize, setShirtSize] = React.useState<ShirtSize>(ShirtSize.medium)
   const [shirtColor, setShirtColor] = React.useState<ShirtColor>(
-    ShirtColorEnum.grey
+    ShirtColor.grey
   )
 
   const handleFormSubmit = () => {
     trackProductAdded({ color: shirtColor, size: shirtSize })
     toaster.success("Product Added Track call fired")
   }
+
+  const handleShirtColorChange = (
+    event: React.ChangeEvent<HTMLSelectElement>
+  ) => setShirtColor(event.target.value as ShirtColor)
+
+  const handleShirtSizeChange = (event: React.ChangeEvent<HTMLSelectElement>) =>
+    setShirtSize(event.target.value as ShirtSize)
 
   return (
     <Pane display="flex" width="100%" flexDirection="column">
@@ -48,9 +53,9 @@ const ProductAddedExample: React.FC = () => {
           height={majorScale(5)}
           width={majorScale(30)}
           value={shirtSize}
-          onChange={(e) => setShirtSize(e.target.value as ShirtSize)}
+          onChange={handleShirtSizeChange}
         >
-          {Object.values(ShirtSizeEnum).map((size: ShirtSize) => (
+          {Object.values(ShirtSize).map((size: ShirtSize) => (
             <option key={size} value={size}>
               {size.toUpperCase()}
             </option>
@@ -67,9 +72,9 @@ const ProductAddedExample: React.FC = () => {
           height={majorScale(5)}
           width={majorScale(30)}
           value={shirtColor}
-          onChange={(e) => setShirtColor(e.target.value as ShirtColor)}
+          onChange={handleShirtColorChange}
         >
-          {Object.values(ShirtColorEnum).map((color: ShirtColor) => (
+          {Object.values(ShirtColor).map((color: ShirtColor) => (
             <option key={color} value={color}>
               {color.toUpperCase()}
             </option>

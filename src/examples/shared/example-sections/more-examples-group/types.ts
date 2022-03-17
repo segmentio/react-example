@@ -1,7 +1,5 @@
-export enum IndustryEnum {
+export enum Industry {
   Advertising = "Advertising",
   Marketing = "Marketing",
   Technology = "Technology",
 }
-
-export type Industry = keyof typeof IndustryEnum
