@@ -22,7 +22,7 @@ const TableOfContents: React.FC<{
             onClick={() => {
               onContentClick(i)
             }}
-            marginTop={majorScale(1)}
+            marginTop={i === 0 ? undefined : majorScale(1)}
           >
             {title}
           </Link>
