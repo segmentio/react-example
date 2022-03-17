@@ -1,26 +1,9 @@
 import React from "react"
-import {
-  Pane,
-  majorScale,
-  Text,
-  Link,
-  Button,
-  Image,
-  toaster,
-} from "evergreen-ui"
-import { trackButtonClicked } from "../../../analytics-quick-start/analytics"
+import { Pane, majorScale, Text, Link, Image } from "evergreen-ui"
 import DebuggerImage from "./Debugger.png"
-// UNCOMMENT FOR PACKAGE EXAMPLE
-// import useAnalytics from "../../../analytics-package/useAnalytics"
+import SimpleButtonExample from "./SimpleButtonExample"
 
 const TrackExample: React.FC = () => {
-  // UNCOMMENT FOR PACKAGE EXAMPLE
-  // const { trackButtonClicked } = useAnalytics()
-
-  const handleButtonClick = () => {
-    trackButtonClicked("analytics.track()")
-    toaster.success("Track call fired")
-  }
   return (
     <Pane
       display="flex"
@@ -28,22 +11,7 @@ const TrackExample: React.FC = () => {
       justifyContent="space-between"
     >
       <Pane display="flex" flexDirection="column" width="100%">
-        <Pane
-          display="flex"
-          flexDirection="column"
-          alignItems="center"
-          justifyContent="center"
-          justifySelf="center"
-        >
-          <Text>Click the button below.</Text>
-          <Button
-            appearance="primary"
-            marginY={majorScale(2)}
-            onClick={handleButtonClick}
-          >
-            Click Me!
-          </Button>
-        </Pane>
+        <SimpleButtonExample />
         <Text marginTop={majorScale(2)}>
           When the button is clicked, a basic{" "}
           <Link

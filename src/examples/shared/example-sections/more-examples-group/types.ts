@@ -1,5 +1,5 @@
 export enum IndustryEnum {
-  Advertizing = "Advertizing",
+  Advertising = "Advertising",
   Marketing = "Marketing",
   Technology = "Technology",
 }
