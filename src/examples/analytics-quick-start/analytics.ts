@@ -9,10 +9,6 @@ declare let window: AnalyticsWindow
 
 const { analytics } = window
 
-if (!analytics) {
-  console.log("SOMETHING WRONG")
-}
-
 export const pageViewed = (name: string, category = "App") => {
   analytics.page(category, name)
 }
