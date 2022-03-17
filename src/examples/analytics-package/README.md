@@ -7,6 +7,8 @@ There are 2 recommended ways to implement Segment's Javascript ([Analytics 2.0](
 
 **The example deployed through this repo uses the Segment snippet by default.**
 
+In order to experience a deployed example that uses the npm package, there are places that must be commented or uncommented throughout the repo. They are searchable throughout the code with the `COMMENT OUT FOR PACKAGE EXAMPLE` or `UNCOMMENT FOR PACKAGE EXAMPLE` strings. Read the following section for more information.
+
 Benefits of using the Segment npm package:
 
 - Works if there is no `index.html`
@@ -14,8 +16,6 @@ Benefits of using the Segment npm package:
 - Works with existing build toolchain
 
 ## Implementation
-
-In order to experience a deployed example that uses the npm package, there are places that must be commented or uncommented throughout the repo. They are searchable throughout the code with the `COMMENT OUT FOR PACKAGE EXAMPLE` or `UNCOMMENT FOR PACKAGE EXAMPLE` strings.
 
 This section provides a breakdown of all the files and file changes required to implement Segment through the npm package.
 
