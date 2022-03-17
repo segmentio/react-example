@@ -51,7 +51,7 @@ const ProductAddedExample: React.FC = () => {
           onChange={(e) => setShirtSize(e.target.value as ShirtSize)}
         >
           {Object.values(ShirtSizeEnum).map((size: ShirtSize) => (
-            <option key={size} value={size} selected={shirtSize === size}>
+            <option key={size} value={size}>
               {size.toUpperCase()}
             </option>
           ))}
@@ -70,7 +70,7 @@ const ProductAddedExample: React.FC = () => {
           onChange={(e) => setShirtColor(e.target.value as ShirtColor)}
         >
           {Object.values(ShirtColorEnum).map((color: ShirtColor) => (
-            <option key={color} value={color} selected={shirtColor === color}>
+            <option key={color} value={color}>
               {color.toUpperCase()}
             </option>
           ))}
