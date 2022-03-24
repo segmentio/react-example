@@ -39,9 +39,9 @@ You can quickly deploy the same site and use this repository as a [Segment Javas
 5.  Configure Github Pages to use the `gh-pages` branch
     ![GH Pages](./public/readmeImages/ghPages.png)
 
-6.  Change the homepage URL in the `package.json` [file](https://github.com/segmentio/react-example/blob/main/package.json), using the URL copied from `step 4`. Make sure to commit your changes
+6.  Change the homepage URL in the `package.json` [file](https://github.com/segmentio/react-example/blob/main/package.json), using the URL copied from step 4. Make sure to commit your changes
 
-    - This step is important, your code will not deploy to Github pages correctly without this step
+    - This step is important, your code gwill not deploy to Github pages correctly without this step
     - This step triggers the repo's Actions, so that the page will be automatically deployed after application
 
     ![GH package.json](./public/readmeImages/ghPackageJson.png)
