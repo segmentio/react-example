@@ -5,7 +5,7 @@ import Track from "./track"
 import Identify from "./identify"
 import PuttingItAllTogether from "./putting-it-all-together"
 import ProductAdded from "./product-added"
-import MoreExamplesGroup from "./more-examples-group"
+import Group from "./group"
 import TypesOfData from "./types-of-data"
 
 export interface AnalyticsEventSection {
@@ -52,7 +52,7 @@ const analyticsEventSections: AnalyticsEventSection[] = [
     title: "analytics.group()",
     description:
       "The Group call is how you associate an individual user with a group—be it a company, organization, account, project, etc.",
-    example: MoreExamplesGroup,
+    example: Group,
   },
   {
     type: "header",

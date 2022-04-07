@@ -1,5 +1,5 @@
 import { useCallback } from "react"
-import { Industry } from "../shared/example-sections/more-examples-group/types"
+import { Industry } from "../shared/example-sections/group/types"
 import {
   ShirtColor,
   ShirtSize,
