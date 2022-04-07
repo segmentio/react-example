@@ -8,11 +8,9 @@ import { AnalyticsWindow } from "./types"
 
 declare let window: AnalyticsWindow
 
-const { analytics } = window
-
 export const pageViewed = (name: string, category = "App") => {
   try {
-    analytics.page(category, name)
+    window.analytics.page(category, name)
   } catch (e) {
     handleError(e)
   }
@@ -20,7 +18,7 @@ export const pageViewed = (name: string, category = "App") => {
 
 export const trackButtonClicked = (title: string) => {
   try {
-    analytics.track("Button Clicked", {
+    window.analytics.track("Button Clicked", {
       title,
     })
     toaster.success("Track call fired")
@@ -31,7 +29,7 @@ export const trackButtonClicked = (title: string) => {
 
 export const identifyUser = (name: string) => {
   try {
-    analytics.identify({
+    window.analytics.identify({
       name,
     })
     toaster.success("Identify call fired")
@@ -48,7 +46,7 @@ export const trackProductAdded = ({
   size: ShirtSize
 }) => {
   try {
-    analytics.track("Product Added", {
+    window.analytics.track("Product Added", {
       name: "shirt example",
       color,
       size,
@@ -61,7 +59,8 @@ export const trackProductAdded = ({
 
 export const groupUser = (industry: Industry) => {
   try {
-    analytics.group(`${industry} Group ID`, { industry })
+    window.analytics.group(`${industry} Group ID`, { industry })
+    toaster.success("Group call fired")
   } catch (e) {
     handleError(e)
   }
