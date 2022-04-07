@@ -7,82 +7,52 @@ import {
 import useAnalyticsContext from "./analytics-context/useAnalyticsContext"
 import { toaster } from "evergreen-ui"
 
-const handleError = (e: unknown) => {
-  toaster.danger("There was an error in sending your analytics event.")
-
-  if (e instanceof Error) {
-    console.log("ERROR:", e.message)
-  } else {
-    console.log("ERROR:", String(e))
-  }
-}
-
 const useAnalytics = () => {
   const { analytics } = useAnalyticsContext()
 
   const pageViewed = useCallback(
     (name: string, category = "App") => {
-      try {
-        analytics?.page(category, name)
-      } catch (e) {
-        handleError(e)
-      }
+      analytics?.page(category, name)
     },
     [analytics]
   )
 
   const trackButtonClicked = useCallback(
     (title: string) => {
-      try {
-        analytics?.track("Button Clicked", {
-          title,
-        })
-        toaster.success("Track call fired")
-      } catch (e) {
-        handleError(e)
-      }
+      analytics?.track("Button Clicked", {
+        title,
+      })
+      toaster.success("Track call fired")
     },
     [analytics]
   )
 
   const identifyUser = useCallback(
     (name: string) => {
-      try {
-        analytics?.identify({
-          name,
-        })
-        toaster.success("Identify call fired")
-      } catch (e) {
-        handleError(e)
-      }
+      analytics?.identify({
+        name,
+      })
+      toaster.success("Identify call fired")
     },
     [analytics]
   )
 
   const trackProductAdded = useCallback(
     ({ color, size }: { color: ShirtColor; size: ShirtSize }) => {
-      try {
-        analytics?.track("Product Added", {
-          name: "shirt example",
-          color,
-          size,
-        })
-        toaster.success("Product Added Track call fired")
-      } catch (e) {
-        handleError(e)
-      }
+      analytics?.track("Product Added", {
+        name: "shirt example",
+        color,
+        size,
+      })
+      toaster.success("Product Added Track call fired")
     },
     [analytics]
   )
 
   const groupUser = useCallback(
     (industry: Industry) => {
-      try {
-        analytics?.group(`${industry} Group ID`, { industry })
-        toaster.success("Group call fired")
-      } catch (e) {
-        handleError(e)
-      }
+      analytics?.group(`${industry} Group ID`, { industry })
+      toaster.success("Group call fired")
     },
     [analytics]
   )
