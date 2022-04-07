@@ -37,6 +37,7 @@ const useAnalytics = () => {
         analytics?.track("Button Clicked", {
           title,
         })
+        toaster.success("Track call fired")
       } catch (e) {
         handleError(e)
       }
@@ -50,6 +51,7 @@ const useAnalytics = () => {
         analytics?.identify({
           name,
         })
+        toaster.success("Identify call fired")
       } catch (e) {
         handleError(e)
       }
@@ -65,6 +67,7 @@ const useAnalytics = () => {
           color,
           size,
         })
+        toaster.success("Product Added Track call fired")
       } catch (e) {
         handleError(e)
       }
@@ -76,6 +79,7 @@ const useAnalytics = () => {
     (industry: Industry) => {
       try {
         analytics?.group(`${industry} Group ID`, { industry })
+        toaster.success("Group call fired")
       } catch (e) {
         handleError(e)
       }
