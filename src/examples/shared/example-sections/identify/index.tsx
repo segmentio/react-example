@@ -3,7 +3,7 @@ import { Pane, majorScale, Text, Link, Image } from "evergreen-ui"
 import DebuggerImage from "./Debugger.png"
 import FormFieldExample from "./FormFieldExample"
 
-const IdentifyExample: React.FC = () => {
+const Identify: React.FC = () => {
   return (
     <Pane
       display="flex"
@@ -45,4 +45,4 @@ const IdentifyExample: React.FC = () => {
   )
 }
 
-export default IdentifyExample
+export default Identify

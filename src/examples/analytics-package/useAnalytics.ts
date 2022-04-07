@@ -3,7 +3,7 @@ import { Industry } from "../shared/example-sections/more-examples-group/types"
 import {
   ShirtColor,
   ShirtSize,
-} from "../shared/example-sections/more-examples-track/types"
+} from "../shared/example-sections/product-added/types"
 import useAnalyticsContext from "./analytics-context/useAnalyticsContext"
 import { toaster } from "evergreen-ui"
 

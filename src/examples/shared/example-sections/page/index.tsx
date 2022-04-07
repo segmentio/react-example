@@ -2,7 +2,7 @@ import React from "react"
 import { Pane, majorScale, Text, Link, Image } from "evergreen-ui"
 import DebuggerImage from "./Debugger.png"
 
-const PageExample: React.FC = () => (
+const Page: React.FC = () => (
   <Pane display="flex" marginTop={majorScale(2)} justifyContent="space-between">
     <Pane display="flex" flexDirection="column">
       <Text>
@@ -21,4 +21,4 @@ const PageExample: React.FC = () => (
   </Pane>
 )
 
-export default PageExample
+export default Page

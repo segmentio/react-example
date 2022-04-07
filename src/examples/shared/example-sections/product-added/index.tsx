@@ -3,7 +3,7 @@ import { Pane, majorScale, Text, Link, Image } from "evergreen-ui"
 import DebuggerImage from "./Debugger.png"
 import ProductAddedExample from "./ProductAddedExample"
 
-const MoreExamplesTrack: React.FC = () => {
+const ProductAdded: React.FC = () => {
   return (
     <Pane
       display="flex"
@@ -47,4 +47,4 @@ const MoreExamplesTrack: React.FC = () => {
   )
 }
 
-export default MoreExamplesTrack
+export default ProductAdded

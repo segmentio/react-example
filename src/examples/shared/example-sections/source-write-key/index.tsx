@@ -2,12 +2,12 @@ import React from "react"
 import { Pane, majorScale, Text, Link, minorScale, Image } from "evergreen-ui"
 import SourceSettingsImage from "./SourceSettings.png"
 
-const SourceWriteKeyExample: React.FC = () => (
+const SourceWriteKey: React.FC = () => (
   <Pane display="flex" marginTop={majorScale(2)} justifyContent="space-between">
     <Pane display="flex" flexDirection="column">
       <Text>
-        Your Source Write Key is found in your Source settings. Supplementary
-        documentation can be found{" "}
+        Your Source Write Key is found in your Source settings in the Segment
+        app. Supplementary documentation can be found{" "}
         <Link href="https://segment.com/docs/connections/find-writekey/">
           here.
         </Link>
@@ -32,4 +32,4 @@ const SourceWriteKeyExample: React.FC = () => (
   </Pane>
 )
 
-export default SourceWriteKeyExample
+export default SourceWriteKey
