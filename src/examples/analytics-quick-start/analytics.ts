@@ -1,3 +1,4 @@
+import { toaster } from "evergreen-ui"
 import { Industry } from "../shared/example-sections/more-examples-group/types"
 import {
   ShirtColor,
@@ -10,19 +11,33 @@ declare let window: AnalyticsWindow
 const { analytics } = window
 
 export const pageViewed = (name: string, category = "App") => {
-  analytics.page(category, name)
+  try {
+    analytics.page(category, name)
+  } catch (e) {
+    handleError(e)
+  }
 }
 
 export const trackButtonClicked = (title: string) => {
-  analytics.track("Button Clicked", {
-    title,
-  })
+  try {
+    analytics.track("Button Clicked", {
+      title,
+    })
+    toaster.success("Track call fired")
+  } catch (e) {
+    handleError(e)
+  }
 }
 
 export const identifyUser = (name: string) => {
-  analytics.identify({
-    name,
-  })
+  try {
+    analytics.identify({
+      name,
+    })
+    toaster.success("Identify call fired")
+  } catch (e) {
+    handleError(e)
+  }
 }
 
 export const trackProductAdded = ({
@@ -32,13 +47,32 @@ export const trackProductAdded = ({
   color: ShirtColor
   size: ShirtSize
 }) => {
-  analytics.track("Product Added", {
-    name: "shirt example",
-    color,
-    size,
-  })
+  try {
+    analytics.track("Product Added", {
+      name: "shirt example",
+      color,
+      size,
+    })
+    toaster.success("Product Added Track call fired")
+  } catch (e) {
+    handleError(e)
+  }
 }
 
 export const groupUser = (industry: Industry) => {
-  analytics.group(`${industry} Group ID`, { industry })
+  try {
+    analytics.group(`${industry} Group ID`, { industry })
+  } catch (e) {
+    handleError(e)
+  }
+}
+
+const handleError = (e: unknown) => {
+  toaster.danger("There was an error in sending your analytics event.")
+
+  if (e instanceof Error) {
+    console.log("ERROR:", e.message)
+  } else {
+    console.log("ERROR:", String(e))
+  }
 }

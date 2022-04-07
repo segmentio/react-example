@@ -5,13 +5,9 @@ import {
   Text,
   Button,
   TextInputField,
-  toaster,
   minorScale,
 } from "evergreen-ui"
-import {
-  identifyUser,
-  trackButtonClicked,
-} from "../../../analytics-quick-start/analytics"
+import { identifyUser } from "../../../analytics-quick-start/analytics"
 // UNCOMMENT FOR PACKAGE EXAMPLE
 // import useAnalytics from "../../../analytics-package/useAnalytics"
 
@@ -31,8 +27,6 @@ const FormFieldExample: React.FC = () => {
       return
     }
     identifyUser(formValue)
-    trackButtonClicked("analytics.identify()")
-    toaster.success("Identify call fired")
   }
   return (
     <Pane

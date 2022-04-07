@@ -4,7 +4,6 @@ import {
   majorScale,
   Text,
   Button,
-  toaster,
   EditIcon,
   CodeBlockIcon,
   DocumentIcon,
@@ -27,7 +26,6 @@ const IndustrySelectExample: React.FC = () => {
 
   const handleButtonClick = (industry: Industry) => {
     groupUser(industry)
-    toaster.success("Group call fired")
   }
 
   return (

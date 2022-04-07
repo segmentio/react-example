@@ -7,7 +7,6 @@ import {
   Select,
   Heading,
   minorScale,
-  toaster,
 } from "evergreen-ui"
 import { trackProductAdded } from "../../../analytics-quick-start/analytics"
 import { ShirtColor, ShirtSize } from "./types"
@@ -24,7 +23,6 @@ const ProductAddedExample: React.FC = () => {
 
   const handleFormSubmit = () => {
     trackProductAdded({ color: shirtColor, size: shirtSize })
-    toaster.success("Product Added Track call fired")
   }
 
   const handleShirtColorChange = (
