@@ -1,9 +1,12 @@
 import React from "react"
-import { Pane, majorScale, Text, Link, Image } from "evergreen-ui"
+import { Pane, majorScale, Text, Link, Image, minorScale } from "evergreen-ui"
 import DebuggerImage from "./Debugger.png"
-import FormFieldExample from "./FormFieldExample"
+import { identifyUser } from "../../../analytics-quick-start/analytics"
+import FormField from "../../FormField"
 
 const Identify: React.FC = () => {
+  // UNCOMMENT FOR PACKAGE EXAMPLE
+  // import useAnalytics from "../../../analytics-package/useAnalytics"
   return (
     <Pane
       display="flex"
@@ -11,7 +14,18 @@ const Identify: React.FC = () => {
       justifyContent="space-between"
     >
       <Pane display="flex" flexDirection="column" width="100%">
-        <FormFieldExample />
+        <Pane
+          display="flex"
+          flexDirection="column"
+          justifyContent="center"
+          alignSelf="center"
+          width="80%"
+        >
+          <Text marginBottom={minorScale(1)}>
+            Enter a name in the form field.
+          </Text>
+          <FormField onFormSubmit={identifyUser} />
+        </Pane>
         <Text marginTop={majorScale(2)}>
           When the button is clicked, a basic{" "}
           <Link

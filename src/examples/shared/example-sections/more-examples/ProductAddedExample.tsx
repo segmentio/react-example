@@ -2,20 +2,27 @@ import React from "react"
 import {
   Pane,
   majorScale,
-  Text,
   Button,
   Select,
   Heading,
   minorScale,
 } from "evergreen-ui"
 import { trackProductAdded } from "../../../analytics-quick-start/analytics"
-import { ShirtColor, ShirtSize } from "./types"
-// UNCOMMENT FOR PACKAGE EXAMPLE
-// import useAnalytics from "../../../analytics-package/useAnalytics"
+import BaseExample from "./BaseExample"
 
-const ProductAddedExample: React.FC = () => {
-  // UNCOMMENT FOR PACKAGE EXAMPLE
-  // const { trackProductAdded } = useAnalytics()
+export enum ShirtSize {
+  small = "small",
+  medium = "medium",
+  large = "large",
+}
+
+export enum ShirtColor {
+  red = "red",
+  blue = "blue",
+  grey = "grey",
+}
+
+const ProductAdded: React.FC = () => {
   const [shirtSize, setShirtSize] = React.useState<ShirtSize>(ShirtSize.medium)
   const [shirtColor, setShirtColor] = React.useState<ShirtColor>(
     ShirtColor.grey
@@ -34,16 +41,7 @@ const ProductAddedExample: React.FC = () => {
 
   return (
     <Pane display="flex" width="100%" flexDirection="column">
-      <Text marginBottom={majorScale(2)}>
-        Choose an option, and add it to your shopping cart, to see how
-        properties can be associated with an event.
-      </Text>
-      <Pane
-        display="flex"
-        flexDirection="column"
-        height={majorScale(20)}
-        alignSelf="center"
-      >
+      <Pane display="flex" flexDirection="column" height={majorScale(20)}>
         <Heading size={200} marginBottom={minorScale(1)}>
           Shirt Size
         </Heading>
@@ -90,5 +88,11 @@ const ProductAddedExample: React.FC = () => {
     </Pane>
   )
 }
+
+const ProductAddedExample = () => (
+  <BaseExample url="https://segment.com/docs/connections/spec/ecommerce/v2/#product-added">
+    <ProductAdded />
+  </BaseExample>
+)
 
 export default ProductAddedExample

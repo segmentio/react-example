@@ -3,7 +3,7 @@ import { Industry } from "../shared/example-sections/group/types"
 import {
   ShirtColor,
   ShirtSize,
-} from "../shared/example-sections/product-added/types"
+} from "../shared/example-sections/more-examples/ProductAddedExample"
 import { AnalyticsWindow } from "./types"
 
 declare let window: AnalyticsWindow
@@ -34,11 +34,43 @@ export const trackProductAdded = ({
   size: ShirtSize
 }) => {
   window.analytics.track("Product Added", {
-    name: "shirt example",
+    name: "Basic Shirt",
     color,
     size,
   })
   toaster.success("Product Added Track call fired")
+}
+
+export const trackProductSearched = (formValue: string) => {
+  window.analytics.track("Product Searched", {
+    query: formValue,
+  })
+  toaster.success("Product Searched Track call fired")
+}
+
+export const trackProductViewed = ({
+  title,
+  author,
+}: {
+  title: string
+  author: string
+}) => {
+  window.analytics.track("Product Viewed", {
+    title,
+    author,
+  })
+  toaster.success("Product Viewed Track call fired")
+}
+
+export const trackPromotionClicked = (percentage: string) => {
+  window.analytics.track("Promotion Clicked", {
+    promotion_id: "promo_1",
+    creative: "button_example",
+    name: `${percentage}_off_next_order`,
+    position: "ecommerce_examples",
+  })
+
+  toaster.success("Promotion Clicked Track call fired")
 }
 
 export const groupUser = (industry: Industry) => {

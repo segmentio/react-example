@@ -25,7 +25,10 @@ const ExampleSection: React.FC<ExampleSectionProps> = ({
       paddingY={majorScale(4)}
     >
       <Heading size={isHeader ? 800 : 600}>{title}</Heading>
-      <Text marginTop={majorScale(1)} marginBottom={majorScale(3)}>
+      <Text
+        marginTop={majorScale(1)}
+        marginBottom={description ? majorScale(3) : majorScale(1)}
+      >
         {description}
       </Text>
       {children}
