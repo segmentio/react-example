@@ -11,6 +11,9 @@ import ProductAddedExample from "./more-examples/ProductAddedExample"
 import ProductSearchedExample from "./more-examples/ProductSearchedExample"
 import ProductViewedExample from "./more-examples/ProductViewedExample"
 import PromotionClickedExample from "./more-examples/PromotionClickedExample"
+import AccountCreatedExample from "./more-examples/AccountCreatedExample"
+import InviteSentExample from "./more-examples/InviteSentExample"
+import TrialStartedExample from "./more-examples/TrialStartedExample"
 
 export interface AnalyticsEventSection {
   type?: "header" | "body"
@@ -72,18 +75,18 @@ const analyticsEventSections: AnalyticsEventSection[] = [
       "Most B2B SaaS companies have a few common, core lifecycle events for users and accounts. We understand that account hierarchies can be unique and complex, but by following this spec you can take advantage of account-based tools on Segment platform, and B2B SaaS data products by Segment.",
     example: MoreExamplesB2BSaaS,
   },
-  // {
-  //   title: "Account Created",
-  //   example: ProductAddedExample,
-  // },
-  // {
-  //   title: "Invite Sent",
-  //   example: ProductAddedExample,
-  // },
-  // {
-  //   title: "Trial Started",
-  //   example: ProductAddedExample,
-  // },
+  {
+    title: "Account Created",
+    example: AccountCreatedExample,
+  },
+  {
+    title: "Invite Sent",
+    example: InviteSentExample,
+  },
+  {
+    title: "Trial Started",
+    example: TrialStartedExample,
+  },
   {
     title: "More examples: eCommerce",
     type: "header",

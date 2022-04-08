@@ -8,8 +8,12 @@ import { AnalyticsWindow } from "./types"
 
 declare let window: AnalyticsWindow
 
+/**
+ * Basic Analytics calls
+ */
 export const pageViewed = (name: string, category = "App") => {
   window.analytics.page(category, name)
+  toaster.success("Page call fired")
 }
 
 export const trackButtonClicked = (title: string) => {
@@ -26,6 +30,46 @@ export const identifyUser = (name: string) => {
   toaster.success("Identify call fired")
 }
 
+export const groupUser = (industry: Industry) => {
+  window.analytics.group(`${industry} Group ID`, { industry })
+  toaster.success("Group call fired")
+}
+
+/**
+ * B2B SaaS calls
+ */
+export const trackAccountCreated = (accountName: string) => {
+  const eventName = "Account Created"
+  window.analytics.track(eventName, {
+    account_name: accountName,
+  })
+  toaster.success(`${eventName} Track call fired`)
+}
+
+export const trackInviteSent = (email: string) => {
+  const eventName = "Invite Sent"
+  window.analytics.track(eventName, {
+    invitee_email: email,
+    invitee_first_name: "FIRST_NAME",
+    invitee_last_name: "LAST_NAME",
+    invitee_role: "ROLE",
+  })
+  toaster.success(`${eventName} Track call fired`)
+}
+
+export const trackTrialStarted = (startDate: string) => {
+  const eventName = "Trial Started"
+  window.analytics.track(eventName, {
+    trial_start_date: startDate,
+    trial_end_date: "END_DATE",
+    trial_plan_name: "PLAN NAME",
+  })
+  toaster.success(`${eventName} Track call fired`)
+}
+
+/**
+ * eCommerce Analytics calls
+ */
 export const trackProductAdded = ({
   color,
   size,
@@ -33,19 +77,32 @@ export const trackProductAdded = ({
   color: ShirtColor
   size: ShirtSize
 }) => {
-  window.analytics.track("Product Added", {
-    name: "Basic Shirt",
-    color,
+  const eventName = "Product Added"
+  window.analytics.track(eventName, {
+    variant: color,
     size,
+    cart_id: "CARD_ID",
+    product_id: "PRODUCT_ID",
+    sku: "SKU",
+    category: "CATEGORY",
+    name: "Basic Shirt",
+    brand: "BRAND",
+    price: 18.99,
+    quantity: 1,
+    coupon: "COUPON",
+    url: "https://www.example.com/product/path",
+    image_url: "https://www.example.com/product/path.jpg",
   })
-  toaster.success("Product Added Track call fired")
+
+  toaster.success(`${eventName} Track call fired`)
 }
 
 export const trackProductSearched = (formValue: string) => {
-  window.analytics.track("Product Searched", {
+  const eventName = "Product Searched"
+  window.analytics.track(eventName, {
     query: formValue,
   })
-  toaster.success("Product Searched Track call fired")
+  toaster.success(`${eventName} Track call fired`)
 }
 
 export const trackProductViewed = ({
@@ -55,25 +112,34 @@ export const trackProductViewed = ({
   title: string
   author: string
 }) => {
-  window.analytics.track("Product Viewed", {
+  const eventName = "Product Viewed"
+  window.analytics.track(eventName, {
     title,
     author,
+    product_id: "PRODUCT_ID",
+    sku: "SKU",
+    category: "Books",
+    variant: "VARIANT",
+    price: 18.99,
+    quantity: 1,
+    coupon: "COUPON",
+    currency: "USD",
+    value: 18.99,
+    url: "https://www.example.com/product/path",
+    image_url: "https://www.example.com/product/path.jpg",
   })
-  toaster.success("Product Viewed Track call fired")
+
+  toaster.success(`${eventName} Track call fired`)
 }
 
 export const trackPromotionClicked = (percentage: string) => {
-  window.analytics.track("Promotion Clicked", {
+  const eventName = "Promotion Clicked"
+  window.analytics.track(eventName, {
+    name: `${percentage}_off_next_order`,
     promotion_id: "promo_1",
     creative: "button_example",
-    name: `${percentage}_off_next_order`,
     position: "ecommerce_examples",
   })
 
-  toaster.success("Promotion Clicked Track call fired")
-}
-
-export const groupUser = (industry: Industry) => {
-  window.analytics.group(`${industry} Group ID`, { industry })
-  toaster.success("Group call fired")
+  toaster.success(`${eventName} Track call fired`)
 }
