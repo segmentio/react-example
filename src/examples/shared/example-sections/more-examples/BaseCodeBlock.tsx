@@ -1,14 +1,19 @@
 import React from "react"
 import { Pane, majorScale } from "evergreen-ui"
-import { CopyBlock } from "react-code-blocks"
+import { CodeBlock } from "@atlaskit/code"
 
-const BaseCodeBlock: React.FC<{ codeText: string }> = ({ codeText }) => (
+interface Props {
+  codeText: string
+  highlight?: string
+}
+
+const BaseCodeBlock: React.FC<Props> = ({ codeText, highlight }) => (
   <Pane width={majorScale(70)}>
-    <CopyBlock
+    <CodeBlock
       text={codeText}
       language="javascript"
-      theme="dracula"
       showLineNumbers={true}
+      highlight={highlight}
     />
   </Pane>
 )

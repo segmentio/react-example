@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import { Pane, majorScale, Button } from "evergreen-ui"
 import {
   defaultPromotionClickedProperties,
@@ -8,27 +8,41 @@ import BaseExample from "./BaseExample"
 import BaseCodeBlock from "./BaseCodeBlock"
 import { getStringifiedProperties } from "./utils"
 
-const PERCENT_OFF = "15%"
-
-const codeText = `analytics.track("Promotion Clicked", {
-  name: "${PERCENT_OFF}_off_next_order",
+const getCodeText = (
+  percentage: string
+) => `analytics.track("Promotion Clicked", {
+  "name": "${percentage ? `${percentage}_off_next_order` : ""}",
   ${getStringifiedProperties(defaultPromotionClickedProperties)}
 })`
 
-const PromotionClicked: React.FC = () => (
-  <Pane display="flex" flexDirection="column" width={majorScale(30)}>
-    <Button appearance="primary" onClick={() => trackPromotionClicked("15%")}>
-      Click here for {PERCENT_OFF} off your next order!
-    </Button>
-  </Pane>
-)
+const PromotionClicked: React.FC = () => {
+  const [clickedPercentage, setClickedPercentage] = useState<string>("")
+  const percentages = ["15%", "20%", "50%"]
+  return (
+    <Pane display="flex" justifyContent="space-between">
+      <Pane display="flex" flexDirection="column" width={majorScale(30)}>
+        {percentages.map((percent) => (
+          <Button
+            key={percent}
+            appearance="primary"
+            onClick={() => {
+              setClickedPercentage(percent)
+              trackPromotionClicked(clickedPercentage)
+            }}
+            marginBottom={majorScale(1)}
+          >
+            Click here for {percent} off your next order!
+          </Button>
+        ))}
+      </Pane>
+      <BaseCodeBlock codeText={getCodeText(clickedPercentage)} highlight="2" />
+    </Pane>
+  )
+}
 
 const PromotionClickedExample = () => (
   <BaseExample url="https://segment.com/docs/connections/spec/ecommerce/v2/#promotion-clicked">
-    <Pane display="flex" justifyContent="space-between">
-      <PromotionClicked />
-      <BaseCodeBlock codeText={codeText} />
-    </Pane>
+    <PromotionClicked />
   </BaseExample>
 )
 

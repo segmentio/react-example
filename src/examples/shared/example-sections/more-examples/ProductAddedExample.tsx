@@ -31,8 +31,8 @@ const getCodeText = (
   color: ShirtColor,
   size: ShirtSize
 ) => `analytics.track("Product Added", {
-  size: "${size}",
-  variant: "${color}",
+  "size": "${size}",
+  "variant": "${color}",
   ${getStringifiedProperties(defaultProductAddedProperties)}
 })`
 
@@ -99,7 +99,10 @@ const ProductAdded: React.FC = () => {
           Add to Cart
         </Button>
       </Pane>
-      <BaseCodeBlock codeText={getCodeText(shirtColor, shirtSize)} />
+      <BaseCodeBlock
+        codeText={getCodeText(shirtColor, shirtSize)}
+        highlight="2,3"
+      />
     </Pane>
   )
 }

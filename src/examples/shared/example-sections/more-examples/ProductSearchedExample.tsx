@@ -8,7 +8,7 @@ import BaseCodeBlock from "./BaseCodeBlock"
 const getCodeText = (
   formValue: string
 ) => `analytics.track("Product Searched", {
-  query: "${formValue}",
+  "query": "${formValue}",
 })`
 
 export const ProductSearchedExample: React.FC = () => {
@@ -26,7 +26,7 @@ export const ProductSearchedExample: React.FC = () => {
           formLabel="Search"
           buttonText="Search"
         />
-        <BaseCodeBlock codeText={codeText} />
+        <BaseCodeBlock codeText={codeText} highlight="2" />
       </Pane>
     </BaseExample>
   )

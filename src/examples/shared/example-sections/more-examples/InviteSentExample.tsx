@@ -10,7 +10,7 @@ import BaseCodeBlock from "./BaseCodeBlock"
 import { getStringifiedProperties } from "./utils"
 
 const getCodeText = (formValue: string) => `analytics.track("Invite Sent", {
-  invitee_email: "${formValue}",
+  "invitee_email": "${formValue}",
   ${getStringifiedProperties(defaultInviteSentProperties)}
 })`
 
@@ -32,7 +32,7 @@ export const InviteSentExample: React.FC = () => {
           formLabel="Teammate Email"
           buttonText="Invite Teammate"
         />
-        <BaseCodeBlock codeText={codeText} />
+        <BaseCodeBlock codeText={codeText} highlight="2" />
       </Pane>
     </BaseExample>
   )

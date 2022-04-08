@@ -15,7 +15,7 @@ const getFormattedToday = () => {
 }
 
 const getCodeText = (startDate: string) => `analytics.track("Product Viewed", {
-  trial_start_date: "${startDate}",
+  "trial_start_date": "${startDate}",
   ${getStringifiedProperties(defaultTrialStartedProperties)}
 })`
 
@@ -35,7 +35,7 @@ const TrialStarted: React.FC = () => {
           Start Trial
         </Button>
       </Pane>
-      <BaseCodeBlock codeText={getCodeText(formattedToday)} />
+      <BaseCodeBlock codeText={getCodeText(formattedToday)} highlight="2" />
     </Pane>
   )
 }

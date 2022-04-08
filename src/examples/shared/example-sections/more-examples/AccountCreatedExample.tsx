@@ -6,7 +6,7 @@ import { Pane } from "evergreen-ui"
 import BaseCodeBlock from "./BaseCodeBlock"
 
 const getCodeText = (formValue: string) => `analytics.track("Account Created", {
-  account_name: "${formValue}",
+  "account_name": "${formValue}",
 })`
 
 export const AccountCreatedExample: React.FC = () => {
@@ -24,7 +24,7 @@ export const AccountCreatedExample: React.FC = () => {
           formLabel="Account"
           buttonText="Create Account"
         />
-        <BaseCodeBlock codeText={codeText} />
+        <BaseCodeBlock codeText={codeText} highlight="2" />
       </Pane>
     </BaseExample>
   )

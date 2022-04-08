@@ -4,6 +4,7 @@
   "homepage": "https://<YOUR_ORG_OR_USERNAME>.github.io/react-example/",
   "private": true,
   "dependencies": {
+    "@atlaskit/code": "^14.3.5",
     "@segment/analytics-next": "^1.33.5",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^12.0.0",
@@ -12,7 +13,6 @@
     "@types/node": "^16.7.13",
     "evergreen-ui": "^6.9.3",
     "react": "^17.0.2",
-    "react-code-blocks": "^0.0.9-0",
     "react-dom": "^17.0.2",
     "react-scripts": "5.0.0",
     "typescript": "^4.4.2",
