@@ -7,8 +7,12 @@ import {
   Heading,
   minorScale,
 } from "evergreen-ui"
-import { trackProductAdded } from "../../../analytics-quick-start/analytics"
+import {
+  defaultProductAddedProperties,
+  trackProductAdded,
+} from "../../../analytics-quick-start/analytics"
 import BaseExample from "./BaseExample"
+import BaseCodeBlock from "./BaseCodeBlock"
 
 export enum ShirtSize {
   small = "small",
@@ -21,6 +25,17 @@ export enum ShirtColor {
   blue = "blue",
   grey = "grey",
 }
+
+const getCodeText = (
+  color: ShirtColor,
+  size: ShirtSize
+) => `analytics.track("Product Added", {
+  "size": "${size}",
+  "variant": "${color}",
+  ${JSON.stringify(defaultProductAddedProperties, null, 2).slice(4, -2)}
+})`
+
+console.log(JSON.stringify(defaultProductAddedProperties, null, 2).slice(1, -1))
 
 const ProductAdded: React.FC = () => {
   const [shirtSize, setShirtSize] = React.useState<ShirtSize>(ShirtSize.medium)
@@ -40,7 +55,7 @@ const ProductAdded: React.FC = () => {
     setShirtSize(event.target.value as ShirtSize)
 
   return (
-    <Pane display="flex" width="100%" flexDirection="column">
+    <Pane display="flex" justifyContent="space-between">
       <Pane display="flex" flexDirection="column" height={majorScale(20)}>
         <Heading size={200} marginBottom={minorScale(1)}>
           Shirt Size
@@ -85,6 +100,7 @@ const ProductAdded: React.FC = () => {
           Add to Cart
         </Button>
       </Pane>
+      <BaseCodeBlock codeText={getCodeText(shirtColor, shirtSize)} />
     </Pane>
   )
 }

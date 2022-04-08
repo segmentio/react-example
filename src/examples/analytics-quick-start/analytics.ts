@@ -70,6 +70,19 @@ export const trackTrialStarted = (startDate: string) => {
 /**
  * eCommerce Analytics calls
  */
+export const defaultProductAddedProperties = {
+  cart_id: "CART_ID",
+  product_id: "PRODUCT_ID",
+  sku: "SKU",
+  category: "CATEGORY",
+  name: "Basic Shirt",
+  brand: "BRAND",
+  price: 18.99,
+  quantity: 1,
+  coupon: "COUPON",
+  url: "https://www.example.com/product/path",
+  image_url: "https://www.example.com/product/path.jpg",
+}
 export const trackProductAdded = ({
   color,
   size,
@@ -81,19 +94,7 @@ export const trackProductAdded = ({
   window.analytics.track(eventName, {
     variant: color,
     size,
-    cart_id: "CARD_ID",
-    product_id: "PRODUCT_ID",
-    sku: "SKU",
-    category: "CATEGORY",
-    name: "Basic Shirt",
-    brand: "BRAND",
-    price: 18.99,
-    quantity: 1,
-    coupon: "COUPON",
-    url: "https://www.example.com/product/path",
-    image_url: "https://www.example.com/product/path.jpg",
   })
-
   toaster.success(`${eventName} Track call fired`)
 }
 
@@ -128,7 +129,6 @@ export const trackProductViewed = ({
     url: "https://www.example.com/product/path",
     image_url: "https://www.example.com/product/path.jpg",
   })
-
   toaster.success(`${eventName} Track call fired`)
 }
 
@@ -140,6 +140,5 @@ export const trackPromotionClicked = (percentage: string) => {
     creative: "button_example",
     position: "ecommerce_examples",
   })
-
   toaster.success(`${eventName} Track call fired`)
 }

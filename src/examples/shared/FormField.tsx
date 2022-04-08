@@ -2,6 +2,7 @@ import React, { ChangeEvent, useState } from "react"
 import { Pane, majorScale, Button, TextInputField } from "evergreen-ui"
 
 interface Props {
+  onInputChange?: (value: string) => void
   onFormSubmit: (value: string) => void
   buttonText?: string
   formLabel?: string
@@ -9,14 +10,17 @@ interface Props {
 
 const FormField: React.FC<Props> = ({
   onFormSubmit,
+  onInputChange = () => null,
   buttonText = "Submit",
   formLabel = "Name",
 }) => {
   const [formValue, setFormValue] = useState<string>("")
   const [isFormInvalid, setIsFormInvalid] = useState<boolean>(false)
 
-  const onInputChange = (e: ChangeEvent<HTMLInputElement>) =>
+  const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+    onInputChange(e.target.value)
     setFormValue(e.target.value)
+  }
 
   const handleFormSubmit = () => {
     if (!formValue) {
@@ -33,7 +37,7 @@ const FormField: React.FC<Props> = ({
         required
         label={formLabel}
         value={formValue}
-        onChange={onInputChange}
+        onChange={handleInputChange}
       />
       <Button
         appearance="primary"
