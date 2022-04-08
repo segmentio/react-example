@@ -20,7 +20,7 @@ const getCodeText = (startDate: string) => `analytics.track("Product Viewed", {
 })`
 
 const TrialStarted: React.FC = () => {
-  const [formattedToday, setFormattedToday] = useState(getFormattedToday())
+  const [formattedToday, setFormattedToday] = useState("")
 
   return (
     <Pane display="flex" justifyContent="space-between">
