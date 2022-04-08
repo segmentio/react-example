@@ -9,7 +9,7 @@ import { Pane } from "evergreen-ui"
 import BaseCodeBlock from "./BaseCodeBlock"
 import { getStringifiedProperties } from "./utils"
 
-const getCodeText = (formValue: string) => `analytics.track(eventName, {
+const getCodeText = (formValue: string) => `analytics.track("Invite Sent", {
   invitee_email: "${formValue}",
   ${getStringifiedProperties(defaultInviteSentProperties)}
 })`

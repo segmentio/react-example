@@ -11,7 +11,7 @@ import { getStringifiedProperties } from "./utils"
 const TITLE = "Title"
 const AUTHOR = "Author"
 
-const codeText = `analytics.track(eventName, {
+const codeText = `analytics.track("Product Viewed", {
   title: "${TITLE}",
   author: "${AUTHOR}",
   ${getStringifiedProperties(defaultProductViewedProperties)}

@@ -5,7 +5,7 @@ import FormField from "../../FormField"
 import { Pane } from "evergreen-ui"
 import BaseCodeBlock from "./BaseCodeBlock"
 
-const getCodeText = (formValue: string) => `analytics.track(eventName, {
+const getCodeText = (formValue: string) => `analytics.track("Account Created", {
   account_name: "${formValue}",
 })`
 

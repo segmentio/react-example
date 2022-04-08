@@ -14,7 +14,7 @@ const getFormattedToday = () => {
   return today.toISOString()
 }
 
-const getCodeText = (startDate: string) => `analytics.track(eventName, {
+const getCodeText = (startDate: string) => `analytics.track("Product Viewed", {
   trial_start_date: "${startDate}",
   ${getStringifiedProperties(defaultTrialStartedProperties)}
 })`
