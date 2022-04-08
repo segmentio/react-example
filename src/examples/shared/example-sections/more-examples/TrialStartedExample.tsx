@@ -1,8 +1,12 @@
 import React, { useState } from "react"
 import { Pane, majorScale, Button } from "evergreen-ui"
-import { trackTrialStarted } from "../../../analytics-quick-start/analytics"
+import {
+  defaultTrialStartedProperties,
+  trackTrialStarted,
+} from "../../../analytics-quick-start/analytics"
 import BaseExample from "./BaseExample"
 import BaseCodeBlock from "./BaseCodeBlock"
+import { getStringifiedProperties } from "./utils"
 
 const getFormattedToday = () => {
   const timeElapsed = Date.now()
@@ -12,8 +16,7 @@ const getFormattedToday = () => {
 
 const getCodeText = (startDate: string) => `analytics.track(eventName, {
   trial_start_date: "${startDate}",
-  trial_end_date: "END_DATE",
-  trial_plan_name: "PLAN NAME",
+  ${getStringifiedProperties(defaultTrialStartedProperties)}
 })`
 
 const TrialStarted: React.FC = () => {

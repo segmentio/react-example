@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from "react"
 import { Pane, majorScale, Text, Button, BookIcon } from "evergreen-ui"
-import { trackProductViewed } from "../../../analytics-quick-start/analytics"
+import {
+  defaultProductViewedProperties,
+  trackProductViewed,
+} from "../../../analytics-quick-start/analytics"
 import BaseExample from "./BaseExample"
 import BaseCodeBlock from "./BaseCodeBlock"
+import { getStringifiedProperties } from "./utils"
 
 const TITLE = "Title"
 const AUTHOR = "Author"
@@ -10,17 +14,7 @@ const AUTHOR = "Author"
 const codeText = `analytics.track(eventName, {
   title: "${TITLE}",
   author: "${AUTHOR}",
-  product_id: "PRODUCT_ID",
-  sku: "SKU",
-  category: "Books",
-  variant: "VARIANT",
-  price: 18.99,
-  quantity: 1,
-  coupon: "COUPON",
-  currency: "USD",
-  value: 18.99,
-  url: "https://www.example.com/product/path",
-  image_url: "https://www.example.com/product/path.jpg",
+  ${getStringifiedProperties(defaultProductViewedProperties)}
 })`
 
 const ProductViewed: React.FC = () => {

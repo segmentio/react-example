@@ -1,16 +1,18 @@
 import React from "react"
 import { Pane, majorScale, Button } from "evergreen-ui"
-import { trackPromotionClicked } from "../../../analytics-quick-start/analytics"
+import {
+  defaultPromotionClickedProperties,
+  trackPromotionClicked,
+} from "../../../analytics-quick-start/analytics"
 import BaseExample from "./BaseExample"
 import BaseCodeBlock from "./BaseCodeBlock"
+import { getStringifiedProperties } from "./utils"
 
 const PERCENT_OFF = "15%"
 
 const codeText = `analytics.track("Promotion Clicked", {
   name: "${PERCENT_OFF}_off_next_order",
-  promotion_id: "promo_1",
-  creative: "button_example",
-  position: "ecommerce_examples",
+  ${getStringifiedProperties(defaultPromotionClickedProperties)}
 })`
 
 const PromotionClicked: React.FC = () => (

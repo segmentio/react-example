@@ -46,23 +46,29 @@ export const trackAccountCreated = (accountName: string) => {
   toaster.success(`${eventName} Track call fired`)
 }
 
+export const defaultInviteSentProperties = {
+  invitee_first_name: "FIRST_NAME",
+  invitee_last_name: "LAST_NAME",
+  invitee_role: "ROLE",
+}
 export const trackInviteSent = (email: string) => {
   const eventName = "Invite Sent"
   window.analytics.track(eventName, {
     invitee_email: email,
-    invitee_first_name: "FIRST_NAME",
-    invitee_last_name: "LAST_NAME",
-    invitee_role: "ROLE",
+    ...defaultInviteSentProperties,
   })
   toaster.success(`${eventName} Track call fired`)
 }
 
+export const defaultTrialStartedProperties = {
+  trial_end_date: "END_DATE",
+  trial_plan_name: "PLAN NAME",
+}
 export const trackTrialStarted = (startDate: string) => {
   const eventName = "Trial Started"
   window.analytics.track(eventName, {
     trial_start_date: startDate,
-    trial_end_date: "END_DATE",
-    trial_plan_name: "PLAN NAME",
+    ...defaultTrialStartedProperties,
   })
   toaster.success(`${eventName} Track call fired`)
 }
@@ -94,6 +100,7 @@ export const trackProductAdded = ({
   window.analytics.track(eventName, {
     variant: color,
     size,
+    ...defaultProductAddedProperties,
   })
   toaster.success(`${eventName} Track call fired`)
 }
@@ -106,6 +113,19 @@ export const trackProductSearched = (formValue: string) => {
   toaster.success(`${eventName} Track call fired`)
 }
 
+export const defaultProductViewedProperties = {
+  product_id: "PRODUCT_ID",
+  sku: "SKU",
+  category: "Books",
+  variant: "VARIANT",
+  price: 18.99,
+  quantity: 1,
+  coupon: "COUPON",
+  currency: "USD",
+  value: 18.99,
+  url: "https://www.example.com/product/path",
+  image_url: "https://www.example.com/product/path.jpg",
+}
 export const trackProductViewed = ({
   title,
   author,
@@ -117,28 +137,21 @@ export const trackProductViewed = ({
   window.analytics.track(eventName, {
     title,
     author,
-    product_id: "PRODUCT_ID",
-    sku: "SKU",
-    category: "Books",
-    variant: "VARIANT",
-    price: 18.99,
-    quantity: 1,
-    coupon: "COUPON",
-    currency: "USD",
-    value: 18.99,
-    url: "https://www.example.com/product/path",
-    image_url: "https://www.example.com/product/path.jpg",
+    ...defaultProductViewedProperties,
   })
   toaster.success(`${eventName} Track call fired`)
 }
 
+export const defaultPromotionClickedProperties = {
+  promotion_id: "promo_1",
+  creative: "button_example",
+  position: "ecommerce_examples",
+}
 export const trackPromotionClicked = (percentage: string) => {
   const eventName = "Promotion Clicked"
   window.analytics.track(eventName, {
     name: `${percentage}_off_next_order`,
-    promotion_id: "promo_1",
-    creative: "button_example",
-    position: "ecommerce_examples",
+    ...defaultPromotionClickedProperties,
   })
   toaster.success(`${eventName} Track call fired`)
 }

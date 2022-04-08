@@ -1,15 +1,17 @@
 import React, { useState } from "react"
-import { trackInviteSent } from "../../../analytics-quick-start/analytics"
+import {
+  defaultInviteSentProperties,
+  trackInviteSent,
+} from "../../../analytics-quick-start/analytics"
 import BaseExample from "./BaseExample"
 import FormField from "../../FormField"
 import { Pane } from "evergreen-ui"
 import BaseCodeBlock from "./BaseCodeBlock"
+import { getStringifiedProperties } from "./utils"
 
 const getCodeText = (formValue: string) => `analytics.track(eventName, {
   invitee_email: "${formValue}",
-  invitee_first_name: "FIRST_NAME",
-  invitee_last_name: "LAST_NAME",
-  invitee_role: "ROLE",
+  ${getStringifiedProperties(defaultInviteSentProperties)}
 })`
 
 export const InviteSentExample: React.FC = () => {

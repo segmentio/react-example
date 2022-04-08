@@ -13,6 +13,7 @@ import {
 } from "../../../analytics-quick-start/analytics"
 import BaseExample from "./BaseExample"
 import BaseCodeBlock from "./BaseCodeBlock"
+import { getStringifiedProperties } from "./utils"
 
 export enum ShirtSize {
   small = "small",
@@ -30,12 +31,10 @@ const getCodeText = (
   color: ShirtColor,
   size: ShirtSize
 ) => `analytics.track("Product Added", {
-  "size": "${size}",
-  "variant": "${color}",
-  ${JSON.stringify(defaultProductAddedProperties, null, 2).slice(4, -2)}
+  size: "${size}",
+  variant: "${color}",
+  ${getStringifiedProperties(defaultProductAddedProperties)}
 })`
-
-console.log(JSON.stringify(defaultProductAddedProperties, null, 2).slice(1, -1))
 
 const ProductAdded: React.FC = () => {
   const [shirtSize, setShirtSize] = React.useState<ShirtSize>(ShirtSize.medium)
