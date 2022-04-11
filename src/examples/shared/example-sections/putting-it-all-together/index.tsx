@@ -1,7 +1,7 @@
 import React from "react"
 import { Pane, majorScale, Text, Link } from "evergreen-ui"
 
-const PuttingItAllTogetherExample: React.FC = () => (
+const PuttingItAllTogether: React.FC = () => (
   <Pane display="flex" flexDirection="column">
     <Text marginTop={majorScale(1)}>
       With the Track call, you can attribute actions on your site or app to
@@ -21,4 +21,4 @@ const PuttingItAllTogetherExample: React.FC = () => (
   </Pane>
 )
 
-export default PuttingItAllTogetherExample
+export default PuttingItAllTogether

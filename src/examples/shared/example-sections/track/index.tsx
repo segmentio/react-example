@@ -3,7 +3,7 @@ import { Pane, majorScale, Text, Link, Image } from "evergreen-ui"
 import DebuggerImage from "./Debugger.png"
 import SimpleButtonExample from "./SimpleButtonExample"
 
-const TrackExample: React.FC = () => {
+const Track: React.FC = () => {
   return (
     <Pane
       display="flex"
@@ -43,4 +43,4 @@ const TrackExample: React.FC = () => {
   )
 }
 
-export default TrackExample
+export default Track

@@ -5,8 +5,6 @@ import analyticsEventSections from "./example-sections/constants"
 const TableOfContents: React.FC<{
   onContentClick: (index: number) => void
 }> = ({ onContentClick }) => {
-  const contents = analyticsEventSections.map((section) => section.title)
-
   return (
     <Pane
       display="flex"
@@ -14,7 +12,8 @@ const TableOfContents: React.FC<{
       paddingY={majorScale(4)}
       borderBottom
     >
-      {contents.map((title, i) => {
+      {analyticsEventSections.map((eventSection, i) => {
+        const { title, type } = eventSection
         return (
           <Link
             key={i}
@@ -23,6 +22,7 @@ const TableOfContents: React.FC<{
               onContentClick(i)
             }}
             marginTop={i === 0 ? undefined : majorScale(1)}
+            marginLeft={type === "header" ? undefined : majorScale(2)}
           >
             {title}
           </Link>

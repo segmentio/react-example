@@ -3,7 +3,7 @@ import { Pane, majorScale, Text, Image, Link } from "evergreen-ui"
 import DebuggerImage from "./Debugger.png"
 import IndustrySelectExample from "./IndustrySelectExample"
 
-const MoreExamplesGroup: React.FC = () => {
+const Group: React.FC = () => {
   return (
     <Pane
       display="flex"
@@ -43,4 +43,4 @@ const MoreExamplesGroup: React.FC = () => {
   )
 }
 
-export default MoreExamplesGroup
+export default Group

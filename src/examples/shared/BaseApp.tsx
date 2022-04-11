@@ -27,7 +27,7 @@ const App: React.FC = () => {
         <Header />
         <TableOfContents onContentClick={scrollIntoRefView} />
         {analyticsEventSections.map((section, i) => {
-          const { title, description, children: Example } = section
+          const { title, description, example: Example, type } = section
 
           return (
             <AnalyticsEventSection
@@ -35,6 +35,7 @@ const App: React.FC = () => {
               innerRef={getSectionRef(i)}
               title={title}
               description={description}
+              type={type}
             >
               {Example && <Example />}
             </AnalyticsEventSection>

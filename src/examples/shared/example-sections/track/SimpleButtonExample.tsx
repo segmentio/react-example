@@ -1,5 +1,5 @@
 import React from "react"
-import { Pane, majorScale, Text, Button, toaster } from "evergreen-ui"
+import { Pane, majorScale, Text, Button } from "evergreen-ui"
 import { trackButtonClicked } from "../../../analytics-quick-start/analytics"
 // UNCOMMENT FOR PACKAGE EXAMPLE
 // import useAnalytics from "../../../analytics-package/useAnalytics"
@@ -10,7 +10,6 @@ const SimpleButtonExample: React.FC = () => {
 
   const handleButtonClick = () => {
     trackButtonClicked("analytics.track()")
-    toaster.success("Track call fired")
   }
   return (
     <Pane

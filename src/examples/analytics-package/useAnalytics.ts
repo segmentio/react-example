@@ -1,10 +1,7 @@
 import { useCallback } from "react"
-import { Industry } from "../shared/example-sections/more-examples-group/types"
-import {
-  ShirtColor,
-  ShirtSize,
-} from "../shared/example-sections/more-examples-track/types"
+import { Industry } from "../shared/example-sections/group/types"
 import useAnalyticsContext from "./analytics-context/useAnalyticsContext"
+import { toaster } from "evergreen-ui"
 
 const useAnalytics = () => {
   const { analytics } = useAnalyticsContext()
@@ -21,6 +18,7 @@ const useAnalytics = () => {
       analytics?.track("Button Clicked", {
         title,
       })
+      toaster.success("Track call fired")
     },
     [analytics]
   )
@@ -30,17 +28,7 @@ const useAnalytics = () => {
       analytics?.identify({
         name,
       })
-    },
-    [analytics]
-  )
-
-  const trackProductAdded = useCallback(
-    ({ color, size }: { color: ShirtColor; size: ShirtSize }) => {
-      analytics?.track("Product Added", {
-        name: "shirt example",
-        color,
-        size,
-      })
+      toaster.success("Identify call fired")
     },
     [analytics]
   )
@@ -48,6 +36,7 @@ const useAnalytics = () => {
   const groupUser = useCallback(
     (industry: Industry) => {
       analytics?.group(`${industry} Group ID`, { industry })
+      toaster.success("Group call fired")
     },
     [analytics]
   )
@@ -56,7 +45,6 @@ const useAnalytics = () => {
     pageViewed,
     trackButtonClicked,
     identifyUser,
-    trackProductAdded,
     groupUser,
   }
 }

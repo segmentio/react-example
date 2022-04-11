@@ -64,6 +64,8 @@ Unlike the [snippet instrumentation](https://github.com/segmentio/react-example/
 
 We do not recommend calling analytics calls directly from components as they are untyped, can be duplicated with missing properties, and can get out of hand for larger apps.
 
+**To reduce duplication, only the basic analytics calls (page, track, group, identify) will have examples for the npm package**
+
 By using an [analytics file](https://github.com/segmentio/react-example/blob/main/src/examples/analytics-package/useAnalytics.ts) (or files), you can have more uniform events, easily trace where they are being called in your app, and have a set place to edit analytics.
 
 Trace the analytics functions in this hook to view where analytics calls are being made throughout the app. Since this example is not the deployed default, you must uncomment the `useAnalytics` [import](https://github.com/segmentio/react-example/blob/53ecd804f449dd06e3080c6d822b26c0a11063f4/src/examples/shared/BaseApp.tsx#L9-L10) & [useage](https://github.com/segmentio/react-example/blob/53ecd804f449dd06e3080c6d822b26c0a11063f4/src/examples/shared/BaseApp.tsx#L16-L17) and comment out the `analytics-quick-start` [import](https://github.com/segmentio/react-example/blob/53ecd804f449dd06e3080c6d822b26c0a11063f4/src/examples/shared/BaseApp.tsx#L11).
