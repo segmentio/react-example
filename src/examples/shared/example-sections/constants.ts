@@ -13,15 +13,21 @@ import PromotionClickedExample from "./more-examples/PromotionClickedExample"
 import AccountCreatedExample from "./more-examples/AccountCreatedExample"
 import InviteSentExample from "./more-examples/InviteSentExample"
 import TrialStartedExample from "./more-examples/TrialStartedExample"
+import Header from "../Header"
 
 export interface AnalyticsEventSection {
-  type?: "header" | "body"
+  type?: "header" | "body" | "page header"
   title: string
   example?: React.FC
   specLink?: string
 }
 
 const analyticsEventSections: AnalyticsEventSection[] = [
+  {
+    title: "Welcome to our example site!",
+    type: "page header",
+    example: Header,
+  },
   {
     title: "Set this site up as a Source",
     type: "header",

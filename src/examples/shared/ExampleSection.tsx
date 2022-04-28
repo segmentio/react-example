@@ -17,6 +17,7 @@ const ExampleSection: React.FC<ExampleSectionProps> = ({
   specLink,
 }) => {
   const isHeader = type === "header"
+  const isPageHeader = type === "page header"
 
   const handleClickSpec = () => {
     window.open(specLink, "_blank")
@@ -27,9 +28,12 @@ const ExampleSection: React.FC<ExampleSectionProps> = ({
       display="flex"
       flexDirection="column"
       marginBottom={majorScale(5)}
+      width="100%"
     >
       <Pane display="flex">
-        <Heading size={isHeader ? 800 : 700}>{title}</Heading>
+        <Heading size={isPageHeader ? 900 : isHeader ? 800 : 700}>
+          {title}
+        </Heading>
         {specLink && (
           <Button
             onClick={handleClickSpec}

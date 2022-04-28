@@ -15,7 +15,7 @@ export const AccountCreatedExample: React.FC = () => {
   }
 
   return (
-    <Pane display="flex" flexDirection="column">
+    <Pane display="flex" flexDirection="column" width="100%">
       <Text marginBottom={majorScale(4)}>
         Send this event when a new account is created
       </Text>
