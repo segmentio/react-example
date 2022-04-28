@@ -23,7 +23,7 @@ const TableOfContents: React.FC<{
         width={majorScale(24)}
         marginLeft={majorScale(8)}
         position="sticky"
-        top="0"
+        top={majorScale(4)}
       >
         <Pane
           display="flex"
