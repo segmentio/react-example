@@ -6,6 +6,7 @@ interface Props {
   onFormSubmit: (value: string) => void
   buttonText?: string
   formLabel?: string
+  placeholder?: string
 }
 
 const FormField: React.FC<Props> = ({
@@ -13,6 +14,7 @@ const FormField: React.FC<Props> = ({
   onInputChange = () => null,
   buttonText = "Submit",
   formLabel = "Name",
+  placeholder,
 }) => {
   const [formValue, setFormValue] = useState<string>("")
   const [isFormInvalid, setIsFormInvalid] = useState<boolean>(false)
@@ -38,6 +40,7 @@ const FormField: React.FC<Props> = ({
         label={formLabel}
         value={formValue}
         onChange={handleInputChange}
+        placeholder={placeholder}
       />
       <Button
         appearance="primary"

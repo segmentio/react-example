@@ -9,8 +9,9 @@ const TableOfContents: React.FC<{
     <Pane
       display="flex"
       flexDirection="column"
-      paddingY={majorScale(4)}
+      width={majorScale(22)}
       borderBottom
+      marginLeft={majorScale(8)}
     >
       {analyticsEventSections.map((eventSection, i) => {
         const { title, type } = eventSection

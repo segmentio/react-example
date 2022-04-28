@@ -23,10 +23,14 @@ const App: React.FC = () => {
   return (
     <Pane paddingBottom={majorScale(20)}>
       <Navbar />
-      <Pane paddingX={majorScale(30)} display="flex">
-        <Pane>
+      <Pane display="flex" justifyContent="center" marginTop={majorScale(4)}>
+        <Pane
+          width={majorScale(93)}
+          display="flex"
+          flexDirection="column"
+          alignItems="center"
+        >
           <Header />
-
           {analyticsEventSections.map((section, i) => {
             const { title, description, example: Example, type } = section
 

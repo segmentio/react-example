@@ -3,7 +3,6 @@ import Page from "./page"
 import React from "react"
 import Track from "./track"
 import Identify from "./identify"
-import PuttingItAllTogether from "./putting-it-all-together"
 import Group from "./group"
 import TypesOfData from "./types-of-data"
 import { MoreExamplesB2BSaaS, MoreExamplesECommerce } from "./more-examples"
@@ -44,24 +43,16 @@ const analyticsEventSections: AnalyticsEventSection[] = [
     example: Track,
   },
   {
-    title: "analytics.identify()",
-    description:
-      "The Identify call lets you tie a user to their actions and record traits about them. It includes a unique User ID and any optional traits you know about the user, like their email, name, etc.",
+    title: "Identify calls",
+    description: "analytics.identify()",
     example: Identify,
   },
   {
-    title: "analytics.group()",
-    description:
-      "The Group call is how you associate an individual user with a group—be it a company, organization, account, project, etc.",
+    title: "Group calls",
+    description: "analytics.group()",
     example: Group,
   },
-  {
-    type: "header",
-    title: "Putting it all together",
-    description:
-      "Using Track and Identify together gives you a clear picture of who your user is and how they are interacting with your site or app.",
-    example: PuttingItAllTogether,
-  },
+
   {
     title: "More examples: B2B SaaS",
     type: "header",

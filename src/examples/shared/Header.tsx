@@ -2,12 +2,7 @@ import React from "react"
 import { Pane, Heading, majorScale, Text, Link } from "evergreen-ui"
 
 const Header: React.FC = () => (
-  <Pane
-    display="flex"
-    flexDirection="column"
-    marginTop={majorScale(4)}
-    marginBottom={majorScale(5)}
-  >
+  <Pane display="flex" flexDirection="column" marginBottom={majorScale(5)}>
     <Heading size={900}>Welcome to our example site!</Heading>
     <Text marginTop={majorScale(4)}>
       We’ve implemented dummy data on this site so that when you click different
