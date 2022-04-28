@@ -24,29 +24,23 @@ export interface AnalyticsEventSection {
 
 const analyticsEventSections: AnalyticsEventSection[] = [
   {
-    title: "The Source Write Key",
+    title: "Set this site up as a Source",
     type: "header",
-    description:
-      "You must first set up this Source in order to see events flowing through your debugger.",
     example: SourceWriteKey,
   },
   {
     title: "Types of data",
-    description:
-      "Segment generates and sends messages to our tracking API based on the code you add to your website, mobile app or server.",
     type: "header",
     example: TypesOfData,
   },
   {
-    title: "analytics.page()",
-    description:
-      "The Page call lets you record whenever a user sees a page of your website, along with any optional properties about the page.",
+    title: "Page calls",
+    description: "analytics.page()",
     example: Page,
   },
   {
-    title: "analytics.track()",
-    description:
-      "The Track call is how you record any actions your users perform, along with any properties that describe the action.",
+    title: "Track calls",
+    description: "analytics.track()",
     example: Track,
   },
   {

@@ -5,10 +5,10 @@ const Header: React.FC = () => (
   <Pane
     display="flex"
     flexDirection="column"
-    paddingTop={majorScale(4)}
-    paddingBottom={majorScale(1)}
+    marginTop={majorScale(4)}
+    marginBottom={majorScale(5)}
   >
-    <Heading size={800}>Welcome to our example site!</Heading>
+    <Heading size={900}>Welcome to our example site!</Heading>
     <Text marginTop={majorScale(4)}>
       We’ve implemented dummy data on this site so that when you click different
       buttons on the page, you’ll be able to see each test event flow through

@@ -21,16 +21,11 @@ const ExampleSection: React.FC<ExampleSectionProps> = ({
       ref={innerRef}
       display="flex"
       flexDirection="column"
-      paddingY={majorScale(4)}
+      marginBottom={majorScale(5)}
     >
       <Heading size={isHeader ? 800 : 600}>{title}</Heading>
-      <Text
-        marginTop={majorScale(1)}
-        marginBottom={description ? majorScale(3) : majorScale(1)}
-      >
-        {description}
-      </Text>
-      {children}
+      {description && <Text marginTop={majorScale(1)}>{description}</Text>}
+      <Pane marginTop={majorScale(4)}>{children}</Pane>
     </Pane>
   )
 }

@@ -7,20 +7,68 @@ import {
   Text,
   Link,
 } from "evergreen-ui"
+import { capitalize } from "lodash"
+
+type EventType = "track" | "identify" | "group" | "page" | "screen" | "alias"
+
+const getDocLink = (event: EventType) =>
+  `https://segment.com/docs/connections/spec/${event}/`
+
+type EventSection = {
+  [eventType in EventType]: { description: string; docLink: string }
+}
+const eventSections: EventSection = {
+  track: {
+    description: "what are they doing?",
+    docLink: getDocLink("track"),
+  },
+
+  page: {
+    description: "what web page are they on?",
+    docLink: getDocLink("track"),
+  },
+
+  identify: {
+    description: "who is the customer?",
+    docLink: getDocLink("track"),
+  },
+
+  group: {
+    description: "what account or organization are they part of?",
+    docLink: getDocLink("track"),
+  },
+
+  screen: {
+    description: "what app screen are they on?",
+    docLink: getDocLink("track"),
+  },
+
+  alias: {
+    description: "what was their past identity?",
+    docLink: getDocLink("alias"),
+  },
+}
 
 const TypesOfData: React.FC = () => (
-  <Pane display="flex" flexDirection="column" marginTop={-majorScale(1)}>
+  <Pane display="flex" flexDirection="column">
+    <Text>
+      Segment generates and sends messages to our tracking API based on the code
+      you add to your website, mobile app or server.
+    </Text>
     <Text>
       We generate and send these messages via a standard set of API calls, which
       each represent a distinct type of semantic information about a customer:
     </Text>
     <UnorderedList>
-      <ListItem>Page: what web page are they on?</ListItem>
-      <ListItem>Track: what are they doing?</ListItem>
-      <ListItem>Identify: who is the customer?</ListItem>
-      <ListItem>Group: what account or organization are they part of?</ListItem>
-      <ListItem>Screen: what app screen are they on?</ListItem>
-      <ListItem>Alias: what was their past identity?</ListItem>
+      {Object.keys(eventSections).map((eventType) => {
+        const section = eventSections[eventType as EventType]
+        return (
+          <ListItem key={eventType}>
+            <Link href={section.docLink}>{capitalize(eventType)}</Link>:{" "}
+            {section.description}
+          </ListItem>
+        )
+      })}
     </UnorderedList>
 
     <Text marginTop={majorScale(2)}>
