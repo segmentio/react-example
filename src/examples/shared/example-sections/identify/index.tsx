@@ -27,7 +27,11 @@ const Identify: React.FC = () => {
         flexDirection="column"
       >
         <Text marginBottom={majorScale(3)}>Enter a name in this field:</Text>
-        <FormField onFormSubmit={identifyUser} placeholder="Jane Doe" />
+        <FormField
+          onFormSubmit={identifyUser}
+          placeholder="Jane Doe"
+          isCompact={true}
+        />
       </Pane>
 
       <Text marginY={majorScale(3)}>
@@ -63,7 +67,6 @@ const Identify: React.FC = () => {
             website or app, so in this case, you don’t need to worry about them.
           </Text>
         }
-        marginBottom={32}
       />
     </Pane>
   )

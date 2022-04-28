@@ -7,6 +7,7 @@ interface Props {
   buttonText?: string
   formLabel?: string
   placeholder?: string
+  isCompact?: boolean
 }
 
 const FormField: React.FC<Props> = ({
@@ -15,6 +16,7 @@ const FormField: React.FC<Props> = ({
   buttonText = "Submit",
   formLabel = "Name",
   placeholder,
+  isCompact,
 }) => {
   const [formValue, setFormValue] = useState<string>("")
   const [isFormInvalid, setIsFormInvalid] = useState<boolean>(false)
@@ -32,7 +34,11 @@ const FormField: React.FC<Props> = ({
     onFormSubmit(formValue)
   }
   return (
-    <Pane display="flex" alignItems="center">
+    <Pane
+      display="flex"
+      flexDirection={isCompact ? "row" : "column"}
+      alignItems={isCompact ? "center" : undefined}
+    >
       <TextInputField
         width={majorScale(30)}
         isInvalid={isFormInvalid}
@@ -45,7 +51,8 @@ const FormField: React.FC<Props> = ({
       <Button
         appearance="primary"
         onClick={handleFormSubmit}
-        marginLeft={majorScale(1)}
+        width={majorScale(15)}
+        marginLeft={isCompact ? majorScale(1) : undefined}
       >
         {buttonText}
       </Button>

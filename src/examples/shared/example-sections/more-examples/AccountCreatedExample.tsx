@@ -1,8 +1,7 @@
 import React, { useState } from "react"
 import { trackAccountCreated } from "../../../analytics-quick-start/analytics"
-import BaseExample from "./BaseExample"
 import FormField from "../../FormField"
-import { Pane } from "evergreen-ui"
+import { majorScale, Pane, Text } from "evergreen-ui"
 import BaseCodeBlock from "./BaseCodeBlock"
 
 const getCodeText = (formValue: string) => `analytics.track("Account Created", {
@@ -16,17 +15,25 @@ export const AccountCreatedExample: React.FC = () => {
   }
 
   return (
-    <BaseExample url="https://segment.com/docs/connections/spec/b2b-saas/#account-created">
-      <Pane display="flex" justifyContent="space-between">
-        <FormField
-          onInputChange={handleInputChange}
-          onFormSubmit={trackAccountCreated}
-          formLabel="Account"
-          buttonText="Create Account"
-        />
+    <Pane display="flex" flexDirection="column">
+      <Text marginBottom={majorScale(4)}>
+        Send this event when a new account is created
+      </Text>
+      <Pane display="flex" background="tint1" padding={majorScale(3)}>
+        <Pane display="flex" flexDirection="column" marginRight={majorScale(3)}>
+          <Text marginBottom={majorScale(2)}>
+            Enter an account name to create:
+          </Text>
+          <FormField
+            onInputChange={handleInputChange}
+            onFormSubmit={trackAccountCreated}
+            formLabel="Account"
+            buttonText="Create Account"
+          />
+        </Pane>
         <BaseCodeBlock codeText={codeText} highlight="2" />
       </Pane>
-    </BaseExample>
+    </Pane>
   )
 }
 

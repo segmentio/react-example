@@ -58,35 +58,49 @@ const analyticsEventSections: AnalyticsEventSection[] = [
   {
     title: "Account Created",
     example: AccountCreatedExample,
+    specLink:
+      "https://segment.com/docs/connections/spec/b2b-saas/#account-created",
   },
   {
     title: "Invite Sent",
     example: InviteSentExample,
+    specLink: "https://segment.com/docs/connections/spec/b2b-saas/#invite-sent",
   },
   {
     title: "Trial Started",
     example: TrialStartedExample,
+    specLink:
+      "https://segment.com/docs/connections/spec/ecommerce/v2/#promotion-clicked",
   },
   {
     title: "More examples: eCommerce",
     type: "header",
     example: MoreExamplesECommerce,
+    specLink: "https://segment.com/docs/connections/spec/ecommerce/",
   },
   {
     title: "Product Added",
     example: ProductAddedExample,
+    specLink:
+      "https://segment.com/docs/connections/spec/ecommerce/v2/#product-added",
   },
   {
     title: "Product Searched",
     example: ProductSearchedExample,
+    specLink:
+      "https://segment.com/docs/connections/spec/ecommerce/v2/#products-searched",
   },
   {
     title: "Product Viewed",
     example: ProductViewedExample,
+    specLink:
+      "https://segment.com/docs/connections/spec/ecommerce/v2/#product-viewed",
   },
   {
     title: "Promotion Clicked",
     example: PromotionClickedExample,
+    specLink:
+      "https://segment.com/docs/connections/spec/ecommerce/v2/#promotion-clicked",
   },
 ]
 

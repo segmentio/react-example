@@ -45,7 +45,6 @@ const Track: React.FC = () => {
             is assigned.
           </Text>
         }
-        marginBottom={32}
       />
     </Pane>
   )
