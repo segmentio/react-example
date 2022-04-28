@@ -23,24 +23,27 @@ const App: React.FC = () => {
   return (
     <Pane paddingBottom={majorScale(20)}>
       <Navbar />
-      <Pane paddingX={majorScale(30)}>
-        <Header />
-        <TableOfContents onContentClick={scrollIntoRefView} />
-        {analyticsEventSections.map((section, i) => {
-          const { title, description, example: Example, type } = section
+      <Pane paddingX={majorScale(30)} display="flex">
+        <Pane>
+          <Header />
 
-          return (
-            <AnalyticsEventSection
-              key={i}
-              innerRef={getSectionRef(i)}
-              title={title}
-              description={description}
-              type={type}
-            >
-              {Example && <Example />}
-            </AnalyticsEventSection>
-          )
-        })}
+          {analyticsEventSections.map((section, i) => {
+            const { title, description, example: Example, type } = section
+
+            return (
+              <AnalyticsEventSection
+                key={i}
+                innerRef={getSectionRef(i)}
+                title={title}
+                description={description}
+                type={type}
+              >
+                {Example && <Example />}
+              </AnalyticsEventSection>
+            )
+          })}
+        </Pane>
+        <TableOfContents onContentClick={scrollIntoRefView} />
       </Pane>
     </Pane>
   )

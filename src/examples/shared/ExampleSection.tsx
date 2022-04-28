@@ -21,7 +21,6 @@ const ExampleSection: React.FC<ExampleSectionProps> = ({
       ref={innerRef}
       display="flex"
       flexDirection="column"
-      borderTop={isHeader ? "1px solid black" : true}
       paddingY={majorScale(4)}
     >
       <Heading size={isHeader ? 800 : 600}>{title}</Heading>
