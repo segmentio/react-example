@@ -9,6 +9,9 @@ const Identify: React.FC = () => {
   // import useAnalytics from "../../../analytics-package/useAnalytics"
   return (
     <Pane display="flex" flexDirection="column">
+      <Text marginTop={majorScale(1)} marginBottom={majorScale(4)}>
+        analytics.identify()
+      </Text>
       <Text marginBottom={majorScale(3)}>
         The Identify call lets you tie a user to their actions and record traits
         about them. It includes a unique User ID and any optional traits you

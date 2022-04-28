@@ -51,11 +51,11 @@ const eventSections: EventSection = {
 
 const TypesOfData: React.FC = () => (
   <Pane display="flex" flexDirection="column">
-    <Text>
+    <Text marginTop={majorScale(4)}>
       Segment generates and sends messages to our tracking API based on the code
       you add to your website, mobile app or server.
     </Text>
-    <Text>
+    <Text marginTop={majorScale(2)}>
       We generate and send these messages via a standard set of API calls, which
       each represent a distinct type of semantic information about a customer:
     </Text>

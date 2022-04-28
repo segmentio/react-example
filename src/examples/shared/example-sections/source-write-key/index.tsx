@@ -4,7 +4,7 @@ import SourceSettingsImage from "./SourceSettings.png"
 
 const SourceWriteKey: React.FC = () => (
   <Pane display="flex" flexDirection="column" justifyContent="space-between">
-    <Text marginBottom={majorScale(2)}>
+    <Text marginBottom={majorScale(2)} marginTop={majorScale(4)}>
       You must first set up this Source in order to see events flowing through
       your debugger.
     </Text>

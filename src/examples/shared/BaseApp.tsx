@@ -32,15 +32,15 @@ const App: React.FC = () => {
         >
           <Header />
           {analyticsEventSections.map((section, i) => {
-            const { title, description, example: Example, type } = section
+            const { title, example: Example, type, specLink } = section
 
             return (
               <AnalyticsEventSection
                 key={i}
                 innerRef={getSectionRef(i)}
                 title={title}
-                description={description}
                 type={type}
+                specLink={specLink}
               >
                 {Example && <Example />}
               </AnalyticsEventSection>

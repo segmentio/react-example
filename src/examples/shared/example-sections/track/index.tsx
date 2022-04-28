@@ -6,6 +6,9 @@ import SimpleButtonExample from "./SimpleButtonExample"
 const Track: React.FC = () => {
   return (
     <Pane display="flex" flexDirection="column">
+      <Text marginTop={majorScale(1)} marginBottom={majorScale(4)}>
+        analytics.track()
+      </Text>
       <Text marginBottom={majorScale(3)}>
         The Track call is how you record any actions your users perform, along
         with any properties that describe the action.

@@ -6,6 +6,9 @@ import IndustrySelectExample from "./IndustrySelectExample"
 const Group: React.FC = () => {
   return (
     <Pane display="flex" width="100%" flexDirection="column">
+      <Text marginTop={majorScale(1)} marginBottom={majorScale(4)}>
+        analytics.group()
+      </Text>
       <Text marginBottom={majorScale(3)}>
         The Group call is how you associate an individual user with a group—like
         a company, organization, account, project, etc.

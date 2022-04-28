@@ -1,39 +1,30 @@
 import React from "react"
-import { Pane, majorScale, Text, Link } from "evergreen-ui"
+import { Pane, majorScale, Text } from "evergreen-ui"
 
-interface Props {
-  type: "b2b" | "ecommerce"
-}
-
-const MoreExamples: React.FC<Props> = ({ type }) => {
-  const isB2B = type === "b2b"
-  let title = ""
-  let url = ""
-
-  if (isB2B) {
-    title = "B2B Saas"
-    url = "https://segment.com/docs/connections/spec/b2b-saas/"
-  } else {
-    title = "eCommerce"
-    url = "https://segment.com/docs/connections/spec/ecommerce/v2/"
-  }
-  return (
-    <Pane display="flex" flexDirection="column">
-      <Text marginTop={majorScale(1)}>
-        Below, we’ve included examples of common {title} events to get you
-        started.
-      </Text>
-      <Link marginTop={majorScale(1)} href={url} target="blank_">
-        View full {title} spec here.
-      </Link>
-    </Pane>
-  )
-}
-
-export const MoreExamplesB2BSaaS: React.FC = () => <MoreExamples type="b2b" />
-
-export const MoreExamplesECommerce: React.FC = () => (
-  <MoreExamples type="ecommerce" />
+export const MoreExamplesB2BSaaS: React.FC = () => (
+  <Pane display="flex" flexDirection="column">
+    <Text marginTop={majorScale(4)}>
+      Most B2B SaaS companies have a few common, core lifecycle events for users
+      and accounts. We understand that account hierarchies can be unique and
+      complex, but by following this spec you can take advantage of
+      account-based tools on Segment platform, and B2B SaaS data products by
+      Segment.
+    </Text>
+    <Text marginTop={majorScale(1)}>
+      We’ve included examples of common B2B Saas events to get you started.
+    </Text>
+  </Pane>
 )
 
-export default MoreExamples
+export const MoreExamplesECommerce: React.FC = () => (
+  <Pane display="flex" flexDirection="column">
+    <Text marginTop={majorScale(4)}>
+      Segment’s eCommerce spec helps define the journey for a customer as they
+      browse your store, click on promotions, view products, add those products
+      to a cart, and complete a purchase.
+    </Text>
+    <Text marginTop={majorScale(1)}>
+      We’ve included examples of common B2B Saas events to get you started.
+    </Text>
+  </Pane>
+)
