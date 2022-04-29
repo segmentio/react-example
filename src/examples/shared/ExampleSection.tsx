@@ -1,37 +1,56 @@
 import React from "react"
-import { Pane, Heading, majorScale, Text } from "evergreen-ui"
+import { Pane, Heading, majorScale, Button, ShareIcon } from "evergreen-ui"
 import { Ref } from "react"
 import { AnalyticsEventSection } from "./example-sections/constants"
 
 interface ExampleSectionProps extends AnalyticsEventSection {
   innerRef: Ref<HTMLDivElement>
   children: React.ReactNode
+  specLink?: string
 }
 
 const ExampleSection: React.FC<ExampleSectionProps> = ({
   title,
-  description,
   children,
   innerRef,
   type,
+  specLink,
 }) => {
   const isHeader = type === "header"
+  const isPageHeader = type === "page header"
+
+  let textSize = 700
+  if (isPageHeader) {
+    textSize = 900
+  } else if (isHeader) {
+    textSize = 800
+  }
+
+  const handleClickSpec = () => {
+    window.open(specLink, "_blank")
+  }
   return (
     <Pane
       ref={innerRef}
       display="flex"
       flexDirection="column"
-      borderTop={isHeader ? "1px solid black" : true}
-      paddingY={majorScale(4)}
+      marginBottom={majorScale(5)}
+      width="100%"
     >
-      <Heading size={isHeader ? 800 : 600}>{title}</Heading>
-      <Text
-        marginTop={majorScale(1)}
-        marginBottom={description ? majorScale(3) : majorScale(1)}
-      >
-        {description}
-      </Text>
-      {children}
+      <Pane display="flex">
+        <Heading size={textSize}>{title}</Heading>
+        {specLink && (
+          <Button
+            onClick={handleClickSpec}
+            iconAfter={ShareIcon}
+            appearance="minimal"
+            marginLeft={majorScale(1)}
+          >
+            View full spec
+          </Button>
+        )}
+      </Pane>
+      <Pane>{children}</Pane>
     </Pane>
   )
 }

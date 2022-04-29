@@ -3,9 +3,8 @@ import {
   defaultInviteSentProperties,
   trackInviteSent,
 } from "../../../analytics-quick-start/analytics"
-import BaseExample from "./BaseExample"
 import FormField from "../../FormField"
-import { Pane } from "evergreen-ui"
+import { Pane, Text, majorScale } from "evergreen-ui"
 import BaseCodeBlock from "./BaseCodeBlock"
 import { getStringifiedProperties } from "./utils"
 
@@ -20,21 +19,23 @@ export const InviteSentExample: React.FC = () => {
     setCodeText(getCodeText(value))
   }
   return (
-    <BaseExample url="https://segment.com/docs/connections/spec/b2b-saas/#invite-sent">
-      <Pane
-        display="flex"
-        justifyContent="space-between"
-        alignItems="flex-start"
-      >
-        <FormField
-          onInputChange={handleInputChange}
-          onFormSubmit={trackInviteSent}
-          formLabel="Teammate Email"
-          buttonText="Invite Teammate"
-        />
+    <Pane display="flex" flexDirection="column" width="100%">
+      <Text marginBottom={majorScale(4)}>
+        Send this event when a a user invites another user
+      </Text>
+      <Pane display="flex" background="tint1" padding={majorScale(3)}>
+        <Pane display="flex" flexDirection="column" marginRight={majorScale(3)}>
+          <Text marginBottom={majorScale(2)}>Enter an email to ’invite’:</Text>
+          <FormField
+            onInputChange={handleInputChange}
+            onFormSubmit={trackInviteSent}
+            formLabel="Teammate Email"
+            buttonText="Invite Teammate"
+          />
+        </Pane>
         <BaseCodeBlock codeText={codeText} highlight="2" />
       </Pane>
-    </BaseExample>
+    </Pane>
   )
 }
 

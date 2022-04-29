@@ -1,8 +1,7 @@
 import React, { useState } from "react"
 import { trackProductSearched } from "../../../analytics-quick-start/analytics"
-import BaseExample from "./BaseExample"
 import FormField from "../../FormField"
-import { Pane } from "evergreen-ui"
+import { Pane, Text, majorScale } from "evergreen-ui"
 import BaseCodeBlock from "./BaseCodeBlock"
 
 const getCodeText = (
@@ -18,17 +17,23 @@ export const ProductSearchedExample: React.FC = () => {
   }
 
   return (
-    <BaseExample url="https://segment.com/docs/connections/spec/ecommerce/v2/#products-searched">
-      <Pane display="flex" justifyContent="space-between">
-        <FormField
-          onFormSubmit={trackProductSearched}
-          onInputChange={handleInputChange}
-          formLabel="Search"
-          buttonText="Search"
-        />
+    <Pane display="flex" flexDirection="column">
+      <Text marginBottom={majorScale(4)}>
+        Send this event when a user searches for a product
+      </Text>
+      <Pane display="flex" background="tint1" padding={majorScale(3)}>
+        <Pane display="flex" flexDirection="column" marginRight={majorScale(3)}>
+          <Text marginBottom={majorScale(2)}>Search for a product:</Text>
+          <FormField
+            onFormSubmit={trackProductSearched}
+            onInputChange={handleInputChange}
+            formLabel="Search"
+            buttonText="Search"
+          />
+        </Pane>
         <BaseCodeBlock codeText={codeText} highlight="2" />
       </Pane>
-    </BaseExample>
+    </Pane>
   )
 }
 

@@ -4,7 +4,6 @@ import {
   defaultProductViewedProperties,
   trackProductViewed,
 } from "../../../analytics-quick-start/analytics"
-import BaseExample from "./BaseExample"
 import BaseCodeBlock from "./BaseCodeBlock"
 import { getStringifiedProperties } from "./utils"
 
@@ -30,7 +29,7 @@ const getCodeText = ({
   ${getStringifiedProperties(defaultProductViewedProperties)}
 })`
 
-const ProductViewed: React.FC = () => {
+const ProductViewedExample: React.FC = () => {
   const [showProduct, setShowProduct] = useState<boolean>(false)
   const [randomBook, setRandomBook] = useState<Book>({ title: "", author: "" })
 
@@ -41,48 +40,52 @@ const ProductViewed: React.FC = () => {
   }, [showProduct])
 
   return (
-    <Pane display="flex" justifyContent="space-between">
-      {!showProduct && (
-        <Button
-          appearance="primary"
-          onClick={() => {
-            setRandomBook(getRandomBook())
-            setShowProduct(true)
-          }}
-          width={majorScale(30)}
-        >
-          Click Me!
-        </Button>
-      )}
-      {showProduct && (
-        <Pane
-          display="flex"
-          onClick={() => {
-            setRandomBook({ title: "", author: "" })
-            setShowProduct(false)
-          }}
-          border
-          width="fit-content"
-          height="fit-content"
-          padding={majorScale(2)}
-          cursor="pointer"
-        >
-          <BookIcon size={majorScale(12)} color="muted" />
-          <Pane display="flex" flexDirection="column">
-            <Text>{randomBook.title}</Text>
-            <Text>{randomBook.author}</Text>
-          </Pane>
+    <Pane display="flex" flexDirection="column">
+      <Text marginBottom={majorScale(4)}>
+        Send this event when a user views product details
+      </Text>
+      <Pane display="flex" background="tint1" padding={majorScale(3)}>
+        <Pane display="flex" flexDirection="column" marginRight={majorScale(3)}>
+          <Text marginBottom={majorScale(2)}>
+            Click the button to {showProduct ? "hide" : "view"} the product:
+          </Text>
+          {!showProduct && (
+            <Button
+              appearance="primary"
+              onClick={() => {
+                setRandomBook(getRandomBook())
+                setShowProduct(true)
+              }}
+              width={majorScale(30)}
+            >
+              Click Me!
+            </Button>
+          )}
+          {showProduct && (
+            <Pane
+              display="flex"
+              onClick={() => {
+                setRandomBook({ title: "", author: "" })
+                setShowProduct(false)
+              }}
+              border
+              width="fit-content"
+              height="fit-content"
+              padding={majorScale(2)}
+              cursor="pointer"
+            >
+              <BookIcon size={majorScale(12)} color="muted" />
+              <Pane display="flex" flexDirection="column">
+                <Text>{randomBook.title}</Text>
+                <Text>{randomBook.author}</Text>
+              </Pane>
+            </Pane>
+          )}
         </Pane>
-      )}
-      <BaseCodeBlock codeText={getCodeText(randomBook)} highlight="2,3" />
+        <BaseCodeBlock codeText={getCodeText(randomBook)} highlight="2,3" />
+      </Pane>
     </Pane>
   )
 }
-
-export const ProductViewedExample = () => (
-  <BaseExample url="https://segment.com/docs/connections/spec/ecommerce/v2/#product-viewed">
-    <ProductViewed />
-  </BaseExample>
-)
 
 export default ProductViewedExample

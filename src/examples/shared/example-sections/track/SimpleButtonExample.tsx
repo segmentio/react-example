@@ -15,15 +15,16 @@ const SimpleButtonExample: React.FC = () => {
     <Pane
       display="flex"
       flexDirection="column"
-      alignItems="center"
-      justifyContent="center"
-      justifySelf="center"
+      background="tint1"
+      padding={majorScale(3)}
     >
-      <Text>Click the button below.</Text>
+      <Text marginBottom={majorScale(2)}>
+        Click this button to trigger a Track call:
+      </Text>
       <Button
         appearance="primary"
-        marginY={majorScale(2)}
         onClick={handleButtonClick}
+        width={majorScale(10)}
       >
         Click Me!
       </Button>

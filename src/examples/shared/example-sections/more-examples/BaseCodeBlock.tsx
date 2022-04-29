@@ -1,5 +1,5 @@
 import React from "react"
-import { Pane, majorScale } from "evergreen-ui"
+import { Pane, majorScale, Text } from "evergreen-ui"
 import { CodeBlock } from "@atlaskit/code"
 
 interface Props {
@@ -8,7 +8,14 @@ interface Props {
 }
 
 const BaseCodeBlock: React.FC<Props> = ({ codeText, highlight }) => (
-  <Pane width={majorScale(70)}>
+  <Pane
+    width={majorScale(46)}
+    paddingLeft={majorScale(3)}
+    display="flex"
+    flexDirection="column"
+    borderLeft
+  >
+    <Text marginBottom={majorScale(2)}>Preview of the code snippet:</Text>
     <CodeBlock
       text={codeText}
       language="javascript"

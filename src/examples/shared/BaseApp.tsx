@@ -1,7 +1,6 @@
 import React from "react"
 import Navbar from "./NavBar"
 import { Pane, majorScale } from "evergreen-ui"
-import Header from "./Header"
 import AnalyticsEventSection from "./ExampleSection"
 import analyticsEventSections from "./example-sections/constants"
 import TableOfContents from "./TableOfContents"
@@ -23,24 +22,30 @@ const App: React.FC = () => {
   return (
     <Pane paddingBottom={majorScale(20)}>
       <Navbar />
-      <Pane paddingX={majorScale(30)}>
-        <Header />
-        <TableOfContents onContentClick={scrollIntoRefView} />
-        {analyticsEventSections.map((section, i) => {
-          const { title, description, example: Example, type } = section
+      <Pane display="flex" justifyContent="center" marginTop={majorScale(4)}>
+        <Pane
+          width={majorScale(93)}
+          display="flex"
+          flexDirection="column"
+          alignItems="center"
+        >
+          {analyticsEventSections.map((section, i) => {
+            const { title, example: Example, type, specLink } = section
 
-          return (
-            <AnalyticsEventSection
-              key={i}
-              innerRef={getSectionRef(i)}
-              title={title}
-              description={description}
-              type={type}
-            >
-              {Example && <Example />}
-            </AnalyticsEventSection>
-          )
-        })}
+            return (
+              <AnalyticsEventSection
+                key={i}
+                innerRef={getSectionRef(i)}
+                title={title}
+                type={type}
+                specLink={specLink}
+              >
+                {Example && <Example />}
+              </AnalyticsEventSection>
+            )
+          })}
+        </Pane>
+        <TableOfContents onContentClick={scrollIntoRefView} />
       </Pane>
     </Pane>
   )

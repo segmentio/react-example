@@ -1,28 +1,5 @@
 import React from "react"
-import {
-  Pane,
-  Button,
-  GlobeIcon,
-  GitRepoIcon,
-  BookIcon,
-  majorScale,
-  IconButton,
-} from "evergreen-ui"
-
-const NavButton: React.FC<{
-  icon: typeof GlobeIcon | typeof GitRepoIcon
-  href: string
-}> = ({ icon, href }) => (
-  <IconButton
-    icon={icon}
-    outline="none"
-    appearance="minimal"
-    is="a"
-    marginRight={majorScale(1)}
-    href={href}
-    target="blank_"
-  />
-)
+import { Pane, Button, GlobeIcon, majorScale } from "evergreen-ui"
 
 const Navbar: React.FC = () => (
   <Pane
@@ -49,13 +26,6 @@ const Navbar: React.FC = () => (
       >
         Segment
       </Button>
-    </Pane>
-    <Pane>
-      <NavButton
-        icon={GitRepoIcon}
-        href="https://github.com/segmentio/react-example"
-      />
-      <NavButton icon={BookIcon} href="https://segment.com/docs/" />
     </Pane>
   </Pane>
 )

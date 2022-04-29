@@ -29,19 +29,26 @@ const IndustrySelectExample: React.FC = () => {
   }
 
   return (
-    <Pane display="flex" flexDirection="column" alignSelf="center">
-      <Text marginBottom={majorScale(2)}>Choose your industry:</Text>
-      {Object.values(Industry).map((industry) => (
-        <Button
-          key={industry}
-          marginY={majorScale(1)}
-          intent={"none"}
-          iconBefore={INDUSTRY_ICONS[industry]}
-          onClick={() => handleButtonClick(industry)}
-        >
-          {industry}
-        </Button>
-      ))}
+    <Pane
+      display="flex"
+      background="tint1"
+      padding={majorScale(3)}
+      flexDirection="column"
+    >
+      <Text marginBottom={majorScale(2)}>Choose an industry:</Text>
+      <Pane>
+        {Object.values(Industry).map((industry) => (
+          <Button
+            key={industry}
+            marginRight={majorScale(2)}
+            intent={"none"}
+            iconBefore={INDUSTRY_ICONS[industry]}
+            onClick={() => handleButtonClick(industry)}
+          >
+            {industry}
+          </Button>
+        ))}
+      </Pane>
     </Pane>
   )
 }
