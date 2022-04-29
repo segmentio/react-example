@@ -1,19 +1,19 @@
 {
   "files": {
     "main.css": "/react-example/static/css/main.e6c13ad2.css",
-    "main.js": "/react-example/static/js/main.1482eab3.js",
+    "main.js": "/react-example/static/js/main.5383c580.js",
     "react-syntax-highlighter/refractor-import.js": "/react-example/static/js/react-syntax-highlighter/refractor-import.be5804a4.chunk.js",
     "static/js/787.aff05db8.chunk.js": "/react-example/static/js/787.aff05db8.chunk.js",
     "static/media/Debugger.png": "/react-example/static/media/Debugger.f1d6a0d141c8dcdab2dd.png",
     "static/media/SourceSettings.png": "/react-example/static/media/SourceSettings.6593ddd90abae11abaa6.png",
     "index.html": "/react-example/index.html",
     "main.e6c13ad2.css.map": "/react-example/static/css/main.e6c13ad2.css.map",
-    "main.1482eab3.js.map": "/react-example/static/js/main.1482eab3.js.map",
+    "main.5383c580.js.map": "/react-example/static/js/main.5383c580.js.map",
     "refractor-import.be5804a4.chunk.js.map": "/react-example/static/js/react-syntax-highlighter/refractor-import.be5804a4.chunk.js.map",
     "787.aff05db8.chunk.js.map": "/react-example/static/js/787.aff05db8.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.1482eab3.js"
+    "static/js/main.5383c580.js"
   ]
 }
