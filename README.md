@@ -19,13 +19,22 @@ You can quickly deploy the same site and use this repository as a [Segment Javas
     ![GH Fork Button](./public/readmeImages/ghForkButton.png)
 
 2.  Enable Github Actions for the repository through the `Actions` tab
+
     ![GH fork button](./public/readmeImages/ghDisabledWorkflows.png)
     After enabling the button, you should be able to see the `Actions` view
     ![GH empty Workflows page](./public/readmeImages/ghEmptyWorkflows.png)
 
-3.  Add your Segment Source write key to Github Secrets
+3.  Grant the workflow correct repo permissions:
 
-    - Go to the repository settings, and in the sidebar click `Secrets` under the `Security` section
+    - Go to the repository settings, and in the sidebar click `Actions` under the `Code and automation` section
+      ![GH actions settings](./public/readmeImages/ghActionsPermissions.png)
+    - Scroll down to see the workflow settings:
+      ![GH workflow settings](./public/readmeImages/ghWorkflowPermissions.png)
+    - Select `read and write permissions` and Save.
+
+4.  Add your Segment Source write key to Github Secrets
+
+    - Continuing in the repository settings, in the sidebar click `Secrets` under the `Security` section
     - Click `New Repository Secret`
       ![GH empty Secrets page](./public/readmeImages/ghEmptySecrets.png)
     - Add `REACT_APP_SEGMENT_WRITE_KEY` as the secret's name, with the source write key as the value
@@ -34,20 +43,17 @@ You can quickly deploy the same site and use this repository as a [Segment Javas
       After adding the secret to Github, you should be able to see your Secret:
       ![GH Secrets page](./public/readmeImages/ghSecrets.png)
 
-4.  Copy the URL provided by Github in the `Pages` option under `Code and Automation` section in the sidebar
-
 5.  Configure Github Pages to use the `gh-pages` branch
     ![GH Pages](./public/readmeImages/ghPages.png)
 
-6.  Change the homepage URL in the `package.json` [file](https://github.com/segmentio/react-example/blob/main/package.json), using the URL copied from step 4. Make sure to commit your changes
+6.  Copy the URL provided by Github in the `Pages` option under `Code and Automation` section in the sidebar
 
-    - This step is important, your code will not deploy to Github pages correctly without this step
-    - This step triggers the repo's Actions, so that the page will be automatically deployed after application
+7.  Change the homepage URL in the `package.json` [file](https://github.com/segmentio/react-example/blob/main/package.json), using the URL copied from step 6. Make sure to commit your changes
 
     ![GH package.json](./public/readmeImages/ghPackageJson.png)
     ![GH edit package.json](./public/readmeImages/ghEditPackageJson.png)
 
-7.  Navigate to the URL, and click around, and see data flowing through your Source! _There might be a wait for the page to deploy._
+8.  Navigate to the URL copied from step 6, and click around, and see data flowing through your Source! _There might be a wait for the page to deploy. Average time should be around 1 minute._
 
 ## What's going on under the hood?
 
@@ -61,6 +67,8 @@ You should be able to navigate to your Source's debugger and see events flowing 
 ## Troubleshooting Deploy
 
 If, when clicking through the website, you are not seeing events flowing through the debugger _and_ you do not see events being fired in `Developer Tools`, the Github Pages site might not be deployed correctly.
+
+### Issue: The workflow is not deployed in the correct order
 
 The website is properly deployed if the latest workflow run is the `Deploy to GH Pages` workflow:
 ![GH Actions workflow runs](./public/readmeImages/ghPagesDeploy.png)
