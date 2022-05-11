@@ -1,5 +1,6 @@
 import React from "react"
-import { Pane, Button, GlobeIcon, majorScale } from "evergreen-ui"
+import { Pane, Heading, majorScale, Image } from "evergreen-ui"
+import SegmentLogo from "./segmentlogo.png"
 
 const Navbar: React.FC = () => (
   <Pane
@@ -15,17 +16,19 @@ const Navbar: React.FC = () => (
       display="flex"
       textDecoration="none"
       color="inherit"
+      cursor="pointer"
+      justifyContent="center"
     >
-      <Button
-        iconBefore={GlobeIcon}
-        outline="none"
-        appearance="minimal"
+      <Image src={SegmentLogo} />
+      <Heading
+        marginLeft={majorScale(1)}
         is="a"
         href={"https://app.segment.com/"}
         target="blank_"
+        textDecoration="none"
       >
         Segment
-      </Button>
+      </Heading>
     </Pane>
   </Pane>
 )
