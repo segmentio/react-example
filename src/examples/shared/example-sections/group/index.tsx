@@ -10,21 +10,21 @@ const Group: React.FC = () => {
         analytics.group()
       </Text>
       <Text marginBottom={majorScale(3)}>
-        The Group call is how you associate an individual user with a group—like
-        a company, organization, account, project, etc.
+        The Group call associates an individual user with a group. For example, 
+        a company, organization, account, or project.
       </Text>
 
       <IndustrySelectExample />
 
       <Text marginY={majorScale(4)}>
-        When you click an industry button, a basic{" "}
+        When you click an industry button above, a basic{" "}
         <Link
           href="https://segment.com/docs/connections/spec/group/"
           target="blank_"
         >
           Group
         </Link>{" "}
-        call is fired and sent to your debugger:
+        call is fired and sent to the Source debugger:
       </Text>
 
       <Image
@@ -34,8 +34,8 @@ const Group: React.FC = () => {
       />
 
       <Text marginTop={majorScale(2)}>
-        A user can be in more than one group; however, not all platforms support
-        multiple groups. It also lets you record custom traits about the group,
+        Users can be in more than one group; however, not all downstream platforms support
+        multiple groups. With the Group call, you can also record custom traits about the group,
         like industry or number of employees.
       </Text>
       <Text>

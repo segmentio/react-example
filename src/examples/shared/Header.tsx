@@ -4,9 +4,7 @@ import { Pane, majorScale, Text, Link } from "evergreen-ui"
 const Header: React.FC = () => (
   <Pane display="flex" flexDirection="column">
     <Text marginTop={majorScale(4)}>
-      We’ve implemented dummy data on this site so that when you click different
-      buttons on the page, you’ll be able to see each test event flow through
-      your Segment debugger. In order to make this happen, you’ll need to
+      To use this site, 
       <Link
         href="https://github.com/segmentio/react-example#using-this-repository-as-a-segment-source"
         target="_blank"
@@ -14,7 +12,8 @@ const Header: React.FC = () => (
         {" "}
         fork the repository{" "}
       </Link>
-      and add it as a Source in the Segment app.
+       and add it as a Source in your Segment workspace. 
+      Then, when you interact with the page, you’ll see each test event flow through to the Segment debugger.
     </Text>
   </Pane>
 )

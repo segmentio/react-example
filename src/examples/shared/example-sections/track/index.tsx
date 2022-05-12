@@ -10,7 +10,7 @@ const Track: React.FC = () => {
         analytics.track()
       </Text>
       <Text marginBottom={majorScale(3)}>
-        The Track call is how you record any actions your users perform, along
+        The Track call records any actions users perform on your site, along
         with any properties that describe the action.
       </Text>
       <SimpleButtonExample />
@@ -22,7 +22,7 @@ const Track: React.FC = () => {
         >
           Track
         </Link>{" "}
-        call <Code>(Button Clicked)</Code>is fired and sent to your debugger:
+        call <Code>(Button Clicked)</Code>is fired and sent to the Source debugger:
       </Text>
 
       <Image
@@ -35,14 +35,14 @@ const Track: React.FC = () => {
         intent="none"
         title={
           <Text>
-            When this track call gets fired, you’ll notice that an{" "}
+            When this track call is fired, Segment assigns an{" "}
             <Link
               href="https://segment.com/docs/connections/spec/track/#identities"
               target="blank_"
             >
               anonymous user id
             </Link>{" "}
-            is assigned.
+            .
           </Text>
         }
       />

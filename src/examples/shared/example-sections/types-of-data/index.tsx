@@ -52,12 +52,12 @@ const eventSections: EventSection = {
 const TypesOfData: React.FC = () => (
   <Pane display="flex" flexDirection="column">
     <Text marginTop={majorScale(4)}>
-      Segment generates and sends messages to our tracking API based on the code
+      Segment generates and sends messages to the tracking API based on the code
       you add to your website, mobile app or server.
     </Text>
     <Text marginTop={majorScale(2)}>
-      We generate and send these messages via a standard set of API calls, which
-      each represent a distinct type of semantic information about a customer:
+      Each of these messages, sent through a standard set of API calls,
+      represent a distinct piece of semantic information about a customer:
     </Text>
     <UnorderedList>
       {Object.keys(eventSections).map((eventType) => {
@@ -72,13 +72,13 @@ const TypesOfData: React.FC = () => (
     </UnorderedList>
 
     <Text marginTop={majorScale(2)}>
-      We recommend the{" "}
+      Segment provides the{" "}
       <Link href="https://segment.com/docs/connections/spec/" target="blank_">
         Segment Spec
       </Link>{" "}
-      to provide guidance on meaningful data to capture, and the best format for
+      for guidance on meaningful data to capture, and the best format for
       it, across all of Segment’s libraries and APIs. If you implement Segment
-      using these formats, it’s simple to translate your data to downstream
+      using these formats, you can more easily translate your data to downstream
       tools.
     </Text>
   </Pane>
