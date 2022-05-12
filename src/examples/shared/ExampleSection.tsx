@@ -34,8 +34,9 @@ const ExampleSection: React.FC<ExampleSectionProps> = ({
       ref={innerRef}
       display="flex"
       flexDirection="column"
-      marginBottom={majorScale(5)}
+      marginTop={majorScale(5)}
       width="100%"
+      id={title}
     >
       <Pane display="flex">
         <Heading size={textSize}>{title}</Heading>

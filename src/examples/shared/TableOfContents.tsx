@@ -10,6 +10,7 @@ import {
   minorScale,
 } from "evergreen-ui"
 import analyticsEventSections from "./example-sections/constants"
+import useCalculateScroll from "./useCalculateScroll"
 
 const TableOfContents: React.FC<{
   onContentClick: (index: number) => void
@@ -17,6 +18,9 @@ const TableOfContents: React.FC<{
   const handleClickExternalLink = (link: string) => {
     window.open(link, "_blank")
   }
+
+  const { activeTitle } = useCalculateScroll()
+
   return (
     <Pane>
       <Pane
@@ -65,6 +69,7 @@ const TableOfContents: React.FC<{
           <Heading size={400} marginBottom={majorScale(1)}>
             On this site
           </Heading>
+
           {analyticsEventSections.map((eventSection, i) => {
             const { title, type } = eventSection
             return (
@@ -80,7 +85,7 @@ const TableOfContents: React.FC<{
                     ? undefined
                     : majorScale(2)
                 }
-                color="neutral"
+                color={activeTitle === title ? "blue" : "neutral"}
               >
                 {title}
               </Link>

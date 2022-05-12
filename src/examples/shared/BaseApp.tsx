@@ -20,9 +20,9 @@ const App: React.FC = () => {
   }, [pageViewed])
 
   return (
-    <Pane paddingBottom={majorScale(20)}>
+    <Pane paddingBottom={majorScale(10)}>
       <Navbar />
-      <Pane display="flex" justifyContent="center" marginTop={majorScale(4)}>
+      <Pane display="flex" justifyContent="center">
         <Pane
           width={majorScale(93)}
           display="flex"
