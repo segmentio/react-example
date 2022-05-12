@@ -27,7 +27,6 @@ const useCalculateScroll = (
           const top = clamp(rect.top + scroll - offset)
           const bottom = clamp(rect.bottom + scroll - offset)
 
-          console.log({ title, rectBottom: rect.bottom, scroll, offset })
           return { title, top, bottom }
         })
         .find(({ top, bottom, title }) => {
