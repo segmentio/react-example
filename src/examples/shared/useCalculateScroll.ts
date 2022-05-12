@@ -12,6 +12,11 @@ const useCalculateScroll = (
 ): { activeTitle: string } => {
   const [activeTitle, setActiveTitle] = useState("")
 
+  const lastSectionTitles = [
+    analyticsEventSections[analyticsEventSections.length - 2].title,
+    analyticsEventSections[analyticsEventSections.length - 1].title,
+  ]
+
   useLayoutEffect(() => {
     const listener = () => {
       const scroll = window.pageYOffset
@@ -21,22 +26,27 @@ const useCalculateScroll = (
           const { title } = eventSection
           const element = document.getElementById(title)
 
-          if (!element) return { title, top: -1, bottom: -1 }
+          if (!element) return { title, top: -1, bottom: -1, rectTop: -1 }
 
           const rect = element.getBoundingClientRect()
           const top = clamp(rect.top + scroll - offset)
           const bottom = clamp(rect.bottom + scroll - offset)
 
-          return { title, top, bottom }
-        })
-        .find(({ top, bottom, title }) => {
-          const lastSectionTitles = [
-            analyticsEventSections[analyticsEventSections.length - 2].title,
-            analyticsEventSections[analyticsEventSections.length - 1].title,
-          ]
-
           if (lastSectionTitles.includes(title)) {
-            return top > scroll
+            console.log({
+              title,
+              top: rect.top,
+              bottom: rect.bottom,
+              scroll,
+              offset,
+            })
+          }
+
+          return { title, top, bottom, rectTop: rect.top }
+        })
+        .find(({ top, bottom, title, rectTop }) => {
+          if (lastSectionTitles.includes(title)) {
+            return rectTop > 0
           }
           return isBetween(scroll, top, bottom)
         })
