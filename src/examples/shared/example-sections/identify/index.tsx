@@ -13,7 +13,7 @@ const Identify: React.FC = () => {
         analytics.identify()
       </Text>
       <Text marginBottom={majorScale(3)}>
-        The Identify call lets you tie a user to their actions and record traits
+        The Identify call ties users to their actions and records traits
         about them. It includes a unique User ID and any optional traits you
         know about the user, like their email, name, etc.
       </Text>
@@ -35,14 +35,14 @@ const Identify: React.FC = () => {
       </Pane>
 
       <Text marginY={majorScale(3)}>
-        When the button is clicked, a basic{" "}
+        When you click the button, a basic{" "}
         <Link
           href="https://segment.com/docs/connections/spec/identify/"
           target="blank_"
         >
           Identify
         </Link>{" "}
-        call is fired and sent to your debugger.
+        call is fired and sent to the Source debugger.
       </Text>
 
       <Image
@@ -62,9 +62,9 @@ const Identify: React.FC = () => {
             >
               user or anonymous ID
             </Link>
-            . Our browser and mobile libraries automatically use Anonymous IDs
-            under the covers to keep track of users as they navigate around your
-            website or app, so in this case, you don’t need to worry about them.
+            . Segment’s browser and mobile libraries use Anonymous IDs
+            by default to keep track of users as they navigate around your
+            website or app, so in this case, you don’t specify an additional identifier.
           </Text>
         }
       />

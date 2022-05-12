@@ -8,7 +8,7 @@ const Page: React.FC = () => (
       analytics.page()
     </Text>
     <Text marginBottom={majorScale(2)}>
-      The Page call lets you record whenever a user sees a page of your website,
+      The Page call lets you record when users see a page of your website,
       along with any optional properties about the page.
     </Text>
     <Text marginBottom={majorScale(2)}>
@@ -19,7 +19,7 @@ const Page: React.FC = () => (
       >
         Page
       </Link>{" "}
-      event was fired and sent to your debugger:
+      event was fired and sent to the Source debugger:
     </Text>
     <Image maxWidth="75%" src={DebuggerImage} alt="Debugger with page() call" />
   </Pane>
