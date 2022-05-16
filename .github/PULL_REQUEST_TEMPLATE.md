@@ -12,7 +12,7 @@ Testing not required because <<verbose why>>
 
 ## Deployment Procedure
 
-This page is currently not deployed.
+This page is currently autodeployed through GH pages once merged.
 
 ## Rollback Procedure
 
