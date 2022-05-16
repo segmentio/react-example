@@ -28,6 +28,7 @@ const TableOfContents: React.FC<{
         marginLeft={majorScale(8)}
         position="sticky"
         top={majorScale(4)}
+        marginTop={majorScale(5)}
       >
         <Pane
           display="flex"
