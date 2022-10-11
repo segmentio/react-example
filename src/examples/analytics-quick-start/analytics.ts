@@ -23,10 +23,11 @@ export const trackButtonClicked = (title: string) => {
   toaster.success("Track call fired")
 }
 
-export const identifyUser = (name: string) => {
-  window.analytics.identify({
-    name,
-  })
+export const identifyUser = (nameStr: string) => {
+  window.analytics.identify('f4ca124298', {
+  name: nameStr,
+  email: 'mbrown@example.com'
+})
   toaster.success("Identify call fired")
 }
 
