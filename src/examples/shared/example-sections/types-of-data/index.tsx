@@ -25,22 +25,22 @@ const eventSections: EventSection = {
 
   page: {
     description: "what web page are they on?",
-    docLink: getDocLink("track"),
+    docLink: getDocLink("page"),
   },
 
   identify: {
     description: "who is the customer?",
-    docLink: getDocLink("track"),
+    docLink: getDocLink("identify"),
   },
 
   group: {
     description: "what account or organization are they part of?",
-    docLink: getDocLink("track"),
+    docLink: getDocLink("group"),
   },
 
   screen: {
     description: "what app screen are they on?",
-    docLink: getDocLink("track"),
+    docLink: getDocLink("screen"),
   },
 
   alias: {
