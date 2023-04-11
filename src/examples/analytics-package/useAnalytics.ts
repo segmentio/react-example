@@ -8,14 +8,14 @@ const useAnalytics = () => {
 
   const pageViewed = useCallback(
     (name: string, category = "App") => {
-      analytics?.page(category, name)
+      analytics.page(category, name)
     },
     [analytics]
   )
 
   const trackButtonClicked = useCallback(
     (title: string) => {
-      analytics?.track("Button Clicked", {
+      analytics.track("Button Clicked", {
         title,
       })
       toaster.success("Track call fired")
@@ -25,7 +25,7 @@ const useAnalytics = () => {
 
   const identifyUser = useCallback(
     (name: string) => {
-      analytics?.identify({
+      analytics.identify({
         name,
       })
       toaster.success("Identify call fired")
@@ -35,7 +35,7 @@ const useAnalytics = () => {
 
   const groupUser = useCallback(
     (industry: Industry) => {
-      analytics?.group(`${industry} Group ID`, { industry })
+      analytics.group(`${industry} Group ID`, { industry })
       toaster.success("Group call fired")
     },
     [analytics]
