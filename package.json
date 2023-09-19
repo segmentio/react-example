@@ -1,7 +1,7 @@
 {
   "name": "react-example",
   "version": "0.1.0",
-  "homepage": "https://<YOUR_ORG_OR_USERNAME>.github.io/react-example/",
+  "homepage": "https://namrata-codes.github.io/react-example-segment/",
   "private": true,
   "dependencies": {
     "@atlaskit/code": "^14.3.5",
